@@ -137,7 +137,7 @@ export const Projects = () => {
     <Container>
       <Box>
         {projects.map((project) => (
-          <Project project={project} />
+          <Project key={project.title} project={project} />
         ))}
       </Box>
     </Container>
