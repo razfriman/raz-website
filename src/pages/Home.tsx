@@ -8,8 +8,6 @@ import {
   Group,
   Text,
   List,
-  ThemeIcon,
-  Box,
   ActionIcon,
 } from '@mantine/core';
 import { Icon } from "@/ui/Icon";
@@ -69,71 +67,64 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function Home() {
+export const Home = () => {
   const { classes } = useStyles();
   return (
-    <div>
-      <Container>
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              Hi. I'm <span className={classes.highlight}>Raz</span>.
-            </Title>
-            <Text color="dimmed" mt="md">
-              I'm a full-stack developer with experience in .NET, Java, Angular, and React.
+    <Container>
+      <div className={classes.inner}>
+        <div className={classes.content}>
+          <Title className={classes.title}>
+            Hi, I'm <span className={classes.highlight}>Raz</span>
+          </Title>
+          <Text color="dimmed" mt="md">
+            I'm a full-stack developer with experience in .NET, Java, Angular, and React.
+            <br />
+            I'm also an aerial photographer and a VR enthusiast.
+          </Text>
+
+          <List
+            mt={30}
+            spacing="sm"
+            size="sm"
+          >
+            <List.Item icon={<Icon icon="work" />}>
+              Senior Software Engineer at <b>Canva</b>
+            </List.Item>
+            <List.Item icon={<Icon icon="work" />}>
+              Software Engineer II at <b>SpaceX</b>
+            </List.Item>
+            <List.Item icon={<Icon icon="work" />}>
+              Software Engineer at <b>In-Com Data Systems</b>
+            </List.Item>
+            <List.Item icon={<Icon icon="game" />}>
+              Creator of <b>RazTracker</b> <ActionIcon size={20} component="a" href="https://raztracker.com" target="_blank" sx={{
+                display: "inline-flex",
+                verticalAlign: "middle"
+              }}  >
+                <Icon icon="share" />
+              </ActionIcon>
               <br />
-              I'm also an aerial photographer and a VR enthusiast.
-            </Text>
+              <small>Fortnite Stats Tracker and Match Analytics</small>
+            </List.Item>
+            <List.Item icon={<Icon icon="tesla" />}>
+              Creator of <b>TeslaLib</b>  <ActionIcon size={20} component="a" href="https://github.com/razfriman/TeslaLib" target="_blank" sx={{
+                display: "inline-flex",
+                verticalAlign: "middle"
+              }}  >
+                <Icon icon="share" />
+              </ActionIcon>
+              <br />
+              <small>C# wrapper for Tesla Model S API</small>
+            </List.Item>
+          </List>
 
-            <List
-              mt={30}
-              spacing="sm"
-              size="sm"
-              icon={
-                <ThemeIcon size={20} radius="xl">
-                  <Icon icon="github" />
-                </ThemeIcon>
-              }
-            >
-              <List.Item>
-                Senior Software Engineer at <b>Canva</b>
-              </List.Item>
-              <List.Item>
-                Software Engineer II at <b>SpaceX</b>
-              </List.Item>
-              <List.Item>
-                Software Engineer at <b>In-Com Data Systems</b>
-              </List.Item>
-              <List.Item>
-                Creator of <b>RazTracker</b> <ActionIcon size={20} component="a" href="https://raztracker.com" target="_blank" sx={{
-                  display: "inline-flex",
-                  verticalAlign: "middle"
-                }}  >
-                  <Icon icon="share" />
-                </ActionIcon>
-                <br />
-                <small>C# wrapper for Tesla Model S API</small>
-              </List.Item>
-              <List.Item>
-                Creator of <b>TeslaLib</b>  <ActionIcon size={20} component="a" href="https://github.com/razfriman/TeslaLib" target="_blank" sx={{
-                  display: "inline-flex",
-                  verticalAlign: "middle"
-                }}  >
-                  <Icon icon="share" />
-                </ActionIcon>
-                <br />
-                <small>C# wrapper for Tesla Model S API</small>
-              </List.Item>
-            </List>
-
-            <Group mt={30}>
-              <Button component="a" href={resumeUrl} target="_blank" color="inherit" radius="xl" size="md">
-                Download Résumé
-              </Button>
-            </Group>
-          </div>
+          <Group mt={30}>
+            <Button component="a" href={resumeUrl} target="_blank" color="inherit" radius="xl" size="md">
+              Download Résumé
+            </Button>
+          </Group>
         </div>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 }

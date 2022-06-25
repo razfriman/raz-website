@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { createStyles, Header, Container, Group, Burger, Paper, Transition, Avatar } from '@mantine/core';
+import { createStyles, Header, Container, Group, Burger, Paper, Transition, Avatar, useMantineColorScheme, Box, ActionIcon } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import avatarUrl from "@/static/avatar.webp";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useMatch } from 'react-router-dom';
+import { Icon } from './Icon';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 const HEADER_HEIGHT = 60;
 
@@ -83,21 +85,16 @@ export const AppHeader = () => {
         { link: '/', label: 'Home' },
         { link: '/about', label: 'About' },
         { link: '/projects', label: 'Projects' },
-        { link: '/contact', label: 'Contact' },
     ];
     const [opened, toggleOpened] = useBooleanToggle(false);
-    const [active, setActive] = useState(links[0].link);
     const { classes, cx } = useStyles();
 
     const items = links.map((link) => (
         <Link
             key={link.label}
             to={link.link}
-            className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-            onClick={(event) => {
-                setActive(link.link);
-                toggleOpened(false);
-            }}
+            className={cx(classes.link, { [classes.linkActive]: useMatch(link.link) })}
+            onClick={() => toggleOpened(false)}
         >
             {link.label}
         </Link>
@@ -106,17 +103,23 @@ export const AppHeader = () => {
     return (
         <Header height={HEADER_HEIGHT} className={classes.root}>
             <Container className={classes.header}>
-                <Avatar alt="Raz Friman" src={avatarUrl} />
+                <Avatar alt="Raz Friman" src={avatarUrl} radius="xl" component={Link} to="/" />
                 <Group spacing={5} className={classes.links}>
                     {items}
                 </Group>
 
-                <Burger
-                    opened={opened}
-                    onClick={() => toggleOpened()}
-                    className={classes.burger}
-                    size="sm"
-                />
+                <Box sx={{ display: "flex", gap: "16px" }}>
+                    <ThemeSwitcher />
+                    <Burger
+                        opened={opened}
+                        onClick={() => toggleOpened()}
+                        className={classes.burger}
+                        size="sm"
+                    />
+                </Box>
+
+
+
 
                 <Transition transition="pop-top-right" duration={200} mounted={opened}>
                     {(styles) => (

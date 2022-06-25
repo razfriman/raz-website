@@ -8,26 +8,23 @@ export const AppFooter = () => {
       display: "flex",
       justifyContent: "center"
     }}>
-      <Tooltip label="LinkedIn">
+      <Tooltip label="LinkedIn" allowPointerEvents={true}>
         <ActionIcon component="a" href="https://www.linkedin.com/in/razfriman"
-          target="_blank"
-          sx={{ color: "#007bb6" }}>
+          target="_blank">
           <Icon icon="linkedin" />
         </ActionIcon>
       </Tooltip>
 
-      <Tooltip label="GitHub">
+      <Tooltip label="GitHub" allowPointerEvents={true}>
         <ActionIcon component="a" href="https://github.com/razfriman"
-          target="_blank"
-          sx={{ color: "#000000" }}>
+          target="_blank">
           <Icon icon="github" />
         </ActionIcon>
       </Tooltip>
 
-      <Tooltip label="Email">
+      <Tooltip label="Email" allowPointerEvents={true}>
         <ActionIcon component="a" href="mailto:raz.friman@razfriman.com"
-          target="_blank"
-          sx={{ color: "#a9a9a9" }}>
+          target="_blank">
           <Icon icon="email" />
         </ActionIcon>
       </Tooltip>

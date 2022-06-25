@@ -3,7 +3,7 @@ import { Container, Box, Text, Title } from "@mantine/core";
 export const About = () => {
   return (
     <Container>
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
         <Title order={1}>About</Title>
         <Text size="md">
           My name is Raz Friman. I recently spent 1.5 years as an Enterprise

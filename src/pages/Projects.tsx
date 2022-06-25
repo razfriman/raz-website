@@ -1,5 +1,5 @@
 import { Icon } from "@/ui/Icon";
-import { ActionIcon, Box, Container, Title, Tooltip } from "@mantine/core";
+import { ActionIcon, Box, Card, Container, Text, Title } from "@mantine/core";
 
 type Project = {
   title: string;
@@ -113,29 +113,26 @@ const projects: Project[] = [
 
 const Project = ({ project }: { project: Project }) => {
   return (
-    <Box>
-      <Title order={3}>
+    <Card>
+      <Title sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
         {project.title}
         {project.link && (
-         <Tooltip label="GitHub">
-         <ActionIcon component="a" href={project.link}
-           target="_blank"
-           sx={{ color: "#000000" }}>
-           <Icon icon="github" />
-         </ActionIcon>
-       </Tooltip>
+          <ActionIcon size={32} component="a" href={project.link}
+            target="_blank">
+            <Icon size={32} icon={project.link.includes('github') ? 'github' : 'share'} />
+          </ActionIcon>
         )}
       </Title>
-      <Title order={4}>{project.subTitle}</Title>
-      <Title order={5}>{project.description}</Title>
-    </Box>
+      <Text color="dimmed" mt="md">{project.subTitle}</Text>
+      <Text mt="md">{project.description}</Text>
+    </Card>
   );
 };
 
 export const Projects = () => {
   return (
     <Container>
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         {projects.map((project) => (
           <Project key={project.title} project={project} />
         ))}
