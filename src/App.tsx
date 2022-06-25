@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { About } from './pages/About'
@@ -11,6 +11,9 @@ export const App = () => {
     const defaultColorScheme = useColorScheme();
     const [colorScheme, setColorScheme] = useState<ColorScheme>(defaultColorScheme);
     const toggleColorScheme = (value?: ColorScheme) => setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+    useEffect(() => {
+        toggleColorScheme(defaultColorScheme);
+    }, [defaultColorScheme]);
     const theme: MantineThemeOverride = {
         colorScheme: colorScheme,
         primaryColor: 'blue',
