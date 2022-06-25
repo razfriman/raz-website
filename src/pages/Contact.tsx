@@ -1,20 +1,19 @@
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
+import { Container, Box, Title } from "@mantine/core";
+import { Link } from "react-router-dom";
+import { Text } from '@mantine/core';
 
 export const Contact = () => {
   return (
-    <Container maxWidth="sm">
-      <Box display="flex" flexDirection="column" gap={3} mt={5}>
-        <Typography variant="h4">Contact</Typography>
-        <Typography variant="body1">
+    <Container>
+      <Box>
+        <Title order={4}>Contact</Title>
+        <Text size="md">
           If you'd like to reach me, just send an email to &nbsp;
-          <Link href="mailto:raz.friman@razfriman.com">
+          <Link to="mailto:raz.friman@razfriman.com">
             raz.friman@razfriman.com
           </Link>
           .
-        </Typography>
+        </Text>
       </Box>
     </Container>
   );

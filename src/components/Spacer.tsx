@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mantine/core";
 
 export const Spacer = () => {
   return <Box sx={{ flex: "1" }} />;

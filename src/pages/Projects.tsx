@@ -1,8 +1,5 @@
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import { GitHubIcon } from "../icons/GitHubIcon";
+import { Icon } from "@/ui/Icon";
+import { ActionIcon, Box, Container, Title, Tooltip } from "@mantine/core";
 
 type Project = {
   title: string;
@@ -15,6 +12,7 @@ const projects: Project[] = [
     title: "RazTracker",
     subTitle: "C#, .NET, Docker",
     description: "Fortnite Stats Tracker",
+    link: "https://raztracker.com",
   },
   {
     title: "RazzleServer",
@@ -116,28 +114,28 @@ const projects: Project[] = [
 const Project = ({ project }: { project: Project }) => {
   return (
     <Box>
-      <Typography variant="h3">
+      <Title order={3}>
         {project.title}
         {project.link && (
-          <IconButton
-            href={project.link}
-            target="_blank"
-            sx={{ color: "#000000" }}
-          >
-            <GitHubIcon fontSize="large" />
-          </IconButton>
+         <Tooltip label="GitHub">
+         <ActionIcon component="a" href={project.link}
+           target="_blank"
+           sx={{ color: "#000000" }}>
+           <Icon icon="github" />
+         </ActionIcon>
+       </Tooltip>
         )}
-      </Typography>
-      <Typography variant="h5">{project.subTitle}</Typography>
-      <Typography variant="h6">{project.description}</Typography>
+      </Title>
+      <Title order={4}>{project.subTitle}</Title>
+      <Title order={5}>{project.description}</Title>
     </Box>
   );
 };
 
 export const Projects = () => {
   return (
-    <Container maxWidth="sm">
-      <Box display="flex" flexDirection="column" gap={3} mt={5}>
+    <Container>
+      <Box>
         {projects.map((project) => (
           <Project project={project} />
         ))}
