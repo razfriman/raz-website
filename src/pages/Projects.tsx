@@ -118,7 +118,7 @@ const Project = ({ project }: { project: Project }) => {
         {project.title}
         {project.link && (
           <ActionIcon size={32} component="a" href={project.link}
-            target="_blank">
+            target="_blank" aria-label={`${project.title} link`} >
             <Icon size={32} icon={project.link.includes('github') ? 'github' : 'share'} />
           </ActionIcon>
         )}

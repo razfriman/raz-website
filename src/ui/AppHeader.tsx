@@ -114,6 +114,7 @@ export const AppHeader = () => {
                         opened={opened}
                         onClick={() => toggleOpened()}
                         className={classes.burger}
+                        aria-label="links dropdown menu"
                         size="sm"
                     />
                 </Box>
