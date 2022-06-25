@@ -1,39 +1,139 @@
-import { Container, Box, Text, Button, Title } from "@mantine/core";
-import resumeUrl from "../static/Resume_Raz_Friman.pdf";
+// import { Container, Box, Text, Button, Title } from "@mantine/core";
+import resumeUrl from "@/static/Resume_Raz_Friman.pdf";
+import {
+  createStyles,
+  Container,
+  Title,
+  Button,
+  Group,
+  Text,
+  List,
+  ThemeIcon,
+  Box,
+  ActionIcon,
+} from '@mantine/core';
+import { Icon } from "@/ui/Icon";
 
-export const Home = () => {
+const useStyles = createStyles((theme) => ({
+  inner: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    paddingTop: theme.spacing.xl * 2,
+    paddingBottom: theme.spacing.xl * 2,
+  },
+
+  content: {
+    maxWidth: 480,
+    marginRight: theme.spacing.xl * 3,
+
+    [theme.fn.smallerThan('md')]: {
+      maxWidth: '100%',
+      marginRight: 0,
+    },
+  },
+
+  title: {
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: 44,
+    lineHeight: 1.2,
+    fontWeight: 900,
+
+    [theme.fn.smallerThan('xs')]: {
+      fontSize: 28,
+    },
+  },
+
+  control: {
+    [theme.fn.smallerThan('xs')]: {
+      flex: 1,
+    },
+  },
+
+  image: {
+    flex: 1,
+
+    [theme.fn.smallerThan('md')]: {
+      display: 'none',
+    },
+  },
+
+  highlight: {
+    position: 'relative',
+    backgroundColor:
+      theme.colorScheme === 'dark'
+        ? theme.fn.rgba(theme.colors[theme.primaryColor][6], 0.55)
+        : theme.colors[theme.primaryColor][1],
+    borderRadius: theme.radius.sm,
+    padding: '4px 12px',
+  },
+}));
+
+export function Home() {
+  const { classes } = useStyles();
   return (
-    <Container>
-      <Box>
-        <Title order={1}>Hi. I'm Raz.</Title>
+    <div>
+      <Container>
+        <div className={classes.inner}>
+          <div className={classes.content}>
+            <Title className={classes.title}>
+              Hi. I'm <span className={classes.highlight}>Raz</span>.
+            </Title>
+            <Text color="dimmed" mt="md">
+              I'm a full-stack developer with experience in .NET, Java, Angular, and React.
+              <br />
+              I'm also an aerial photographer and a VR enthusiast.
+            </Text>
 
-        <Title order={1}>
-          I'm a full-stack developer with experience in .NET and Angular. I'm
-          also an aerial photographer and a VR enthusiast.
-        </Title>
+            <List
+              mt={30}
+              spacing="sm"
+              size="sm"
+              icon={
+                <ThemeIcon size={20} radius="xl">
+                  <Icon icon="github" />
+                </ThemeIcon>
+              }
+            >
+              <List.Item>
+                Senior Software Engineer at <b>Canva</b>
+              </List.Item>
+              <List.Item>
+                Software Engineer II at <b>SpaceX</b>
+              </List.Item>
+              <List.Item>
+                Software Engineer at <b>In-Com Data Systems</b>
+              </List.Item>
+              <List.Item>
+                Creator of <b>RazTracker</b> <ActionIcon size={20} component="a" href="https://raztracker.com" target="_blank" sx={{
+                  display: "inline-flex",
+                  verticalAlign: "middle"
+                }}  >
+                  <Icon icon="share" />
+                </ActionIcon>
+                <br />
+                <small>C# wrapper for Tesla Model S API</small>
+              </List.Item>
+              <List.Item>
+                Creator of <b>TeslaLib</b>  <ActionIcon size={20} component="a" href="https://github.com/razfriman/TeslaLib" target="_blank" sx={{
+                  display: "inline-flex",
+                  verticalAlign: "middle"
+                }}  >
+                  <Icon icon="share" />
+                </ActionIcon>
+                <br />
+                <small>C# wrapper for Tesla Model S API</small>
+              </List.Item>
+            </List>
 
-        <Title order={1}>
-          Senior Software Engineer at <strong>Canva</strong>
-        </Title>
-
-        <Title order={1}>
-          Software Engineer II at <strong>SpaceX</strong>
-        </Title>
-
-        <Title order={1}>
-          Software Engineer at <strong>In-Com Data Systems</strong>
-        </Title>
-
-        <Text size="md">Creator of RazTracker</Text>
-
-        <Text size="md">
-          Creator of TeslaLib - C# wrapper for Tesla Model S API
-        </Text>
-
-        <Button component="a" href={resumeUrl} target="_blank" color="inherit">
-          Download Résumé
-        </Button>
-      </Box>
-    </Container>
+            <Group mt={30}>
+              <Button component="a" href={resumeUrl} target="_blank" color="inherit" radius="xl" size="md">
+                Download Résumé
+              </Button>
+            </Group>
+          </div>
+        </div>
+      </Container>
+    </div>
   );
-};
+}
