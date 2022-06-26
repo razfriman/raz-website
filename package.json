@@ -2,6 +2,12 @@
   "name": "raz-website",
   "private": true,
   "version": "1.0.0",
+  "description": "Raz Friman personal website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/razfriman/raz-website"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
