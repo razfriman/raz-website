@@ -1,5 +1,5 @@
 // import { Container, Box, Text, Button, Title } from "@mantine/core";
-import resumeUrl from "@/static/Resume_Raz_Friman.pdf";
+import resumeUrl from '@/static/Resume_Raz_Friman.pdf';
 import {
   createStyles,
   Container,
@@ -10,7 +10,7 @@ import {
   List,
   ActionIcon,
 } from '@mantine/core';
-import { Icon } from "@/ui/Icon";
+import { Icon } from '@/ui/Icon';
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -76,42 +76,52 @@ export const Home = () => {
           <Title className={classes.title}>
             Hi, I&apos;m <span className={classes.highlight}>Raz</span>
           </Title>
-          <Text color="dimmed" mt="md">
+          <Text color='dimmed' mt='md'>
             I&apos;m a full-stack developer with experience in .NET, Java, Angular, and React.
             <br />
             I&apos;m also an aerial photographer and a VR enthusiast.
           </Text>
 
-          <List
-            mt={30}
-            spacing="sm"
-            size="sm"
-          >
-            <List.Item icon={<Icon icon="work" />}>
+          <List mt={30} spacing='sm' size='sm'>
+            <List.Item icon={<Icon icon='work' />}>
               Senior Software Engineer at <b>Canva</b>
             </List.Item>
-            <List.Item icon={<Icon icon="work" />}>
+            <List.Item icon={<Icon icon='work' />}>
               Software Engineer II at <b>SpaceX</b>
             </List.Item>
-            <List.Item icon={<Icon icon="work" />}>
+            <List.Item icon={<Icon icon='work' />}>
               Software Engineer at <b>In-Com Data Systems</b>
             </List.Item>
-            <List.Item icon={<Icon icon="game" />}>
-              Creator of <b>RazTracker</b> <ActionIcon size={20} component="a" href="https://raztracker.com" target="_blank" sx={{
-                display: "inline-flex",
-                verticalAlign: "middle"
-              }}  >
-                <Icon icon="share" />
+            <List.Item icon={<Icon icon='game' />}>
+              Creator of <b>RazTracker</b>{' '}
+              <ActionIcon
+                size={20}
+                component='a'
+                href='https://raztracker.com'
+                target='_blank'
+                sx={{
+                  display: 'inline-flex',
+                  verticalAlign: 'middle',
+                }}
+              >
+                <Icon icon='share' />
               </ActionIcon>
               <br />
               <small>Fortnite Stats Tracker and Match Analytics</small>
             </List.Item>
-            <List.Item icon={<Icon icon="tesla" />}>
-              Creator of <b>TeslaLib</b>  <ActionIcon size={20} component="a" href="https://github.com/razfriman/TeslaLib" target="_blank" sx={{
-                display: "inline-flex",
-                verticalAlign: "middle"
-              }}  >
-                <Icon icon="share" />
+            <List.Item icon={<Icon icon='tesla' />}>
+              Creator of <b>TeslaLib</b>{' '}
+              <ActionIcon
+                size={20}
+                component='a'
+                href='https://github.com/razfriman/TeslaLib'
+                target='_blank'
+                sx={{
+                  display: 'inline-flex',
+                  verticalAlign: 'middle',
+                }}
+              >
+                <Icon icon='share' />
               </ActionIcon>
               <br />
               <small>C# wrapper for Tesla Model S API</small>
@@ -119,7 +129,14 @@ export const Home = () => {
           </List>
 
           <Group mt={30}>
-            <Button component="a" href={resumeUrl} target="_blank" color="inherit" radius="xl" size="md">
+            <Button
+              component='a'
+              href={resumeUrl}
+              target='_blank'
+              color='inherit'
+              radius='xl'
+              size='md'
+            >
               Download Résumé
             </Button>
           </Group>
@@ -127,4 +144,4 @@ export const Home = () => {
       </div>
     </Container>
   );
-}
+};
