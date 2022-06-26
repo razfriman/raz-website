@@ -74,12 +74,12 @@ export const Home = () => {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            Hi, I'm <span className={classes.highlight}>Raz</span>
+            Hi, I&apos;m <span className={classes.highlight}>Raz</span>
           </Title>
           <Text color="dimmed" mt="md">
-            I'm a full-stack developer with experience in .NET, Java, Angular, and React.
+            I&apos;m a full-stack developer with experience in .NET, Java, Angular, and React.
             <br />
-            I'm also an aerial photographer and a VR enthusiast.
+            I&apos;m also an aerial photographer and a VR enthusiast.
           </Text>
 
           <List

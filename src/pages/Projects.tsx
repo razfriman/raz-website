@@ -97,7 +97,7 @@ const projects: Project[] = [
   {
     title: "Calculator for Glass",
     subTitle: "Java",
-    description: `Application analyzes a user\'s voice as input in order to solve simple arithmetic equations.`,
+    description: `Application analyzes a user's voice as input in order to solve simple arithmetic equations.`,
     link: "https://github.com/razfriman/GlassCalculator",
   },
   {

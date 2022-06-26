@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import { createStyles, Header, Container, Group, Burger, Paper, Transition, Avatar, useMantineColorScheme, Box, ActionIcon } from '@mantine/core';
+import { createStyles, Header, Container, Group, Burger, Paper, Transition, Avatar, Box } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import avatarUrl from "@/static/avatar.webp";
-import { Link, useLocation, useMatch } from 'react-router-dom';
-import { Icon } from './Icon';
+import { Link, useMatch } from 'react-router-dom';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 const HEADER_HEIGHT = 60;

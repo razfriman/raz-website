@@ -1,4 +1,4 @@
-import { ActionIcon, Box, useMantineColorScheme } from "@mantine/core";
+import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { Icon } from "./Icon";
 
 export const ThemeSwitcher = () => {

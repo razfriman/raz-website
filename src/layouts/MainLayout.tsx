@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { AppShell, Footer } from '@mantine/core';
+import { AppShell } from '@mantine/core';
 import { AppHeader } from '@/ui/AppHeader';
 import { AppFooter } from '@/ui/AppFooter';
 

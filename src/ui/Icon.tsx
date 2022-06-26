@@ -19,7 +19,7 @@ export const Icon = ({
     color?: string,
     size?: number | string,
 }) => {
-    let styles = {
+    const styles = {
         fill: color ?? "currentcolor",
         verticalAlign: "middle",
         width: size,
