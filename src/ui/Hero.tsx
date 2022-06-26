@@ -25,9 +25,11 @@ export const Hero = ({
   return (
     <Stack>
       <Title className={classes.title}>{title}</Title>
-      <Text color='dimmed' mt='md'>
-        {subTitle}
-      </Text>
+      {subTitle && (
+        <Text color='dimmed' mt='md'>
+          {subTitle}
+        </Text>
+      )}
     </Stack>
   );
 };
