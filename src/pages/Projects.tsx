@@ -1,5 +1,6 @@
+import { Hero } from '@/ui/Hero';
 import { Icon } from '@/ui/Icon';
-import { ActionIcon, Box, Card, Container, Text, Title } from '@mantine/core';
+import { ActionIcon, Card, Container, Group, Stack, Text, Title } from '@mantine/core';
 
 type Project = {
   title: string;
@@ -114,8 +115,8 @@ const projects: Project[] = [
 const Project = ({ project }: { project: Project }) => {
   return (
     <Card>
-      <Title sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        {project.title}
+      <Group spacing={16}>
+        <Title>{project.title}</Title>
         {project.link && (
           <ActionIcon
             size={32}
@@ -127,7 +128,7 @@ const Project = ({ project }: { project: Project }) => {
             <Icon size={32} icon={project.link.includes('github') ? 'github' : 'share'} />
           </ActionIcon>
         )}
-      </Title>
+      </Group>
       <Text color='dimmed' mt='md'>
         {project.subTitle}
       </Text>
@@ -138,12 +139,13 @@ const Project = ({ project }: { project: Project }) => {
 
 export const Projects = () => {
   return (
-    <Container>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <Container size='xs' px='xs'>
+      <Stack spacing={16}>
+        <Hero title={<>Projects</>} />
         {projects.map((project) => (
           <Project key={project.title} project={project} />
         ))}
-      </Box>
+      </Stack>
     </Container>
   );
 };

@@ -1,49 +1,40 @@
-import { ActionIcon, Box, Footer, Tooltip } from '@mantine/core';
-import { Icon } from './Icon';
+import { ActionIcon, Footer, Group } from '@mantine/core';
+import { Icon, IconName } from './Icon';
+
+const links: { href: string; icon: IconName }[] = [
+  {
+    href: 'https://www.linkedin.com/in/razfriman',
+    icon: 'linkedin',
+  },
+  {
+    href: 'https://github.com/razfriman',
+    icon: 'github',
+  },
+  {
+    href: 'mailto:raz.friman@razfriman.com',
+    icon: 'email',
+  },
+];
 
 export const AppFooter = () => {
+  const items = links.map((link) => {
+    return (
+      <ActionIcon
+        component='a'
+        href={link.href}
+        key={link.href}
+        aria-label={`${link.icon} link`}
+        target='_blank'
+      >
+        <Icon icon={link.icon} />
+      </ActionIcon>
+    );
+  });
   return (
     <Footer height={60} p='xs'>
-      <Box
-        sx={{
-          gap: '20px',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Tooltip label='LinkedIn' allowPointerEvents={true}>
-          <ActionIcon
-            component='a'
-            href='https://www.linkedin.com/in/razfriman'
-            aria-label='LinkedIn link'
-            target='_blank'
-          >
-            <Icon icon='linkedin' />
-          </ActionIcon>
-        </Tooltip>
-
-        <Tooltip label='GitHub' allowPointerEvents={true}>
-          <ActionIcon
-            component='a'
-            href='https://github.com/razfriman'
-            aria-label='Github link'
-            target='_blank'
-          >
-            <Icon icon='github' />
-          </ActionIcon>
-        </Tooltip>
-
-        <Tooltip label='Email' allowPointerEvents={true}>
-          <ActionIcon
-            component='a'
-            href='mailto:raz.friman@razfriman.com'
-            aria-label='Email link'
-            target='_blank'
-          >
-            <Icon icon='email' />
-          </ActionIcon>
-        </Tooltip>
-      </Box>
+      <Group position='center' spacing={20}>
+        {items}
+      </Group>
     </Footer>
   );
 };

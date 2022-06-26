@@ -1,10 +1,11 @@
-import { Box, Container, Text, Title } from '@mantine/core';
+import { Hero } from '@/ui/Hero';
+import { Container, Stack, Text } from '@mantine/core';
 
 export const About = () => {
   return (
-    <Container>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-        <Title order={1}>About</Title>
+    <Container size='xs' px='xs'>
+      <Stack spacing={16}>
+        <Hero title={<>About Me</>} />
         <Text size='md'>
           My name is Raz Friman. I recently spent 1.5 years as an Enterprise Software Engineer at
           SpaceX. I am now living in Sydney, Australia.
@@ -29,7 +30,7 @@ export const About = () => {
           I have been an early enthusiast in the VR space, and am always working on projects to
           explore the possibilities of this technology.
         </Text>
-      </Box>
+      </Stack>
     </Container>
   );
 };

@@ -1,7 +1,6 @@
 import avatarUrl from '@/static/avatar.webp';
 import {
   Avatar,
-  Box,
   Burger,
   Container,
   createStyles,
@@ -116,7 +115,7 @@ export const AppHeader = () => {
           {items}
         </Group>
 
-        <Box sx={{ display: 'flex', gap: '16px' }}>
+        <Group spacing={16}>
           <ThemeSwitcher />
           <Burger
             opened={opened}
@@ -125,7 +124,7 @@ export const AppHeader = () => {
             aria-label='links dropdown menu'
             size='sm'
           />
-        </Box>
+        </Group>
 
         <Transition transition='pop-top-right' duration={200} mounted={opened}>
           {(styles) => (
