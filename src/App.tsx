@@ -1,16 +1,16 @@
+import {
+  ColorScheme,
+  ColorSchemeProvider,
+  MantineProvider,
+  MantineThemeOverride,
+} from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { MainLayout } from './layouts/MainLayout';
 import { About } from './pages/About';
 import { Home } from './pages/Home';
-import {
-  MantineThemeOverride,
-  MantineProvider,
-  ColorSchemeProvider,
-  ColorScheme,
-} from '@mantine/core';
 import { Projects } from './pages/Projects';
-import { useColorScheme } from '@mantine/hooks';
 
 export const App = () => {
   const defaultColorScheme = useColorScheme();

@@ -1,4 +1,4 @@
-import { Container, Box, Text, Title } from '@mantine/core';
+import { Box, Container, Text, Title } from '@mantine/core';
 
 export const About = () => {
   return (

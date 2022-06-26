@@ -1,16 +1,16 @@
 // import { Container, Box, Text, Button, Title } from "@mantine/core";
 import resumeUrl from '@/static/Resume_Raz_Friman.pdf';
-import {
-  createStyles,
-  Container,
-  Title,
-  Button,
-  Group,
-  Text,
-  List,
-  ActionIcon,
-} from '@mantine/core';
 import { Icon } from '@/ui/Icon';
+import {
+  ActionIcon,
+  Button,
+  Container,
+  createStyles,
+  Group,
+  List,
+  Text,
+  Title,
+} from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   inner: {

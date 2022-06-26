@@ -1,16 +1,16 @@
+import avatarUrl from '@/static/avatar.webp';
 import {
-  createStyles,
-  Header,
-  Container,
-  Group,
-  Burger,
-  Paper,
-  Transition,
   Avatar,
   Box,
+  Burger,
+  Container,
+  createStyles,
+  Group,
+  Header,
+  Paper,
+  Transition,
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
-import avatarUrl from '@/static/avatar.webp';
 import { Link, useMatch } from 'react-router-dom';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
