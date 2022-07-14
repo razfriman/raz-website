@@ -1,5 +1,5 @@
 import { Hero } from '@/ui/Hero';
-import { Icon } from '@/ui/Icon';
+import { Icon } from '@/ui/Icons/Icon';
 import { ActionIcon, Card, Container, Group, Stack, Text, Title } from '@mantine/core';
 
 type Project = {

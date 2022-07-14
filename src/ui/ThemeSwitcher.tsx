@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
-import { Icon } from './Icon';
+import { Icon } from './Icons/Icon';
 
 export const ThemeSwitcher = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

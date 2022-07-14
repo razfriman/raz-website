@@ -1,7 +1,7 @@
 import resumeUrl from '@/static/Resume_Raz_Friman.pdf';
 import { Hero } from '@/ui/Hero';
 import { Highlight } from '@/ui/Highlight';
-import { Icon } from '@/ui/Icon';
+import { Icon } from '@/ui/Icons/Icon';
 import { ActionIcon, Button, Container, Group, List, Stack } from '@mantine/core';
 
 export const Home = () => {
@@ -51,7 +51,7 @@ export const Home = () => {
             <br />
             <small>Fortnite Stats Tracker and Match Analytics</small>
           </List.Item>
-          <List.Item icon={<Icon icon='tesla' />}>
+          <List.Item icon={<Icon icon='tesla' color='red' />}>
             Creator of <b>TeslaLib</b>&nbsp;
             <ActionIcon
               size={20}
