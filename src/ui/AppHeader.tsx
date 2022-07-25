@@ -9,7 +9,7 @@ import {
   Paper,
   Transition,
 } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
+import { useToggle } from '@mantine/hooks';
 import { Link, useMatch } from 'react-router-dom';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
@@ -93,7 +93,8 @@ export const AppHeader = () => {
     { link: '/about', label: 'About' },
     { link: '/projects', label: 'Projects' },
   ];
-  const [opened, toggleOpened] = useBooleanToggle(false);
+
+  const [opened, toggleOpened] = useToggle([false, true]);
   const { classes, cx } = useStyles();
 
   const items = links.map((link) => (
