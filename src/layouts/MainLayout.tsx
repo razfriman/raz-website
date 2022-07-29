@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 export const MainLayout = () => {
   return (
     <AppShell
-      fixed
+      fixed={false}
       header={<AppHeader />}
       footer={<AppFooter />}
       styles={(theme) => ({
