@@ -2,34 +2,23 @@ import { createStyles, DefaultProps, MantineColor, MantineNumberSize } from '@ma
 import { IconName } from './IconName';
 import { iconMapping } from './Icons';
 
-const sizes = {
-  xs: 12,
-  sm: 16,
-  md: 20,
-  lg: 28,
-  xl: 36,
-};
-
-const useStyles = createStyles(
-  (theme, params: { color?: MantineColor; size: MantineNumberSize }) => {
-    const getFill = (color?: MantineColor) => {
-      return !color
-        ? 'currentcolor'
-        : color in theme.colors
-        ? theme.colors[color][theme.colorScheme === 'dark' ? 5 : 7]
-        : color;
-    };
-    const iconSize = theme.fn.size({ size: params.size, sizes });
-    return {
-      root: {
-        fill: getFill(params.color),
-        verticalAlign: 'middle',
-        width: iconSize,
-        height: iconSize,
-      },
-    };
-  },
-);
+const useStyles = createStyles((theme, params: { color?: MantineColor; size?: number }) => {
+  const getFill = (color?: MantineColor) => {
+    return !color
+      ? 'currentcolor'
+      : color in theme.colors
+      ? theme.colors[color][theme.colorScheme === 'dark' ? 5 : 7]
+      : color;
+  };
+  return {
+    root: {
+      fill: getFill(params.color),
+      verticalAlign: 'middle',
+      width: params.size,
+      height: params.size,
+    },
+  };
+});
 
 export interface IconProps extends DefaultProps {
   icon: IconName;
