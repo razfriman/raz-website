@@ -26,6 +26,9 @@ export const Home = () => {
 
         <List spacing='sm' size='sm'>
           <List.Item icon={<Icon icon='work' />}>
+            Staff Software Engineer at <b>Canva</b>
+          </List.Item>
+          <List.Item icon={<Icon icon='work' />}>
             Senior Software Engineer at <b>Canva</b>
           </List.Item>
           <List.Item icon={<Icon icon='work' />}>
