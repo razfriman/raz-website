@@ -1,4 +1,4 @@
 /dist
 /node_modules
 /public
-.eslintrc.js
+.eslintrc.cjs
