@@ -3,15 +3,15 @@
 
 ## Setup
 ```
-yarn
+bun install
 ```
 
 ## Development
 ```
-yarn dev
+bun run dev
 ```
 
 ## Build
 ```
-yarn build
+bun run build
 ```
