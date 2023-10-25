@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, useMatch } from 'react-router-dom';
-import { ThemeSwitcher } from './ThemeSwitcher';
 
 const HEADER_HEIGHT = 60;
 
@@ -117,7 +116,6 @@ export const AppHeader = () => {
         </Group>
 
         <Group spacing={16}>
-          <ThemeSwitcher />
           <Burger
             opened={opened}
             onClick={() => handlers.toggle()}
