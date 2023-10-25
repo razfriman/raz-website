@@ -1,5 +1,4 @@
 import { Hero } from '@/ui/Hero';
-import { Container, Stack, Text } from '@mantine/core';
 
 export const About = () => {
   return (
