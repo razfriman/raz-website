@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Link } from "@tanstack/react-router";
 import { ThemeSwitcher } from "./theme-switcher";
+import {
+	NavigationMenu,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	navigationMenuTriggerStyle,
+} from "./ui/navigation-menu";
 
 export default function Header() {
 	return (
@@ -13,15 +19,37 @@ export default function Header() {
 							Raz Friman
 						</Link>
 						<div className="flex items-center gap-4">
-							<Button asChild variant="ghost">
-								<Link to="/">Home</Link>
-							</Button>
-							<Button asChild variant="ghost">
-								<Link to="/about">About</Link>
-							</Button>
-							<Button asChild variant="ghost">
-								<Link to="/projects">Projects</Link>
-							</Button>
+							<NavigationMenu>
+								<NavigationMenuList>
+									<NavigationMenuItem>
+										<Link to="/">
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
+												Home
+											</NavigationMenuLink>
+										</Link>
+									</NavigationMenuItem>
+									<NavigationMenuItem>
+										<Link to="/about">
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
+												About
+											</NavigationMenuLink>
+										</Link>
+									</NavigationMenuItem>
+									<NavigationMenuItem>
+										<Link to="/projects">
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
+												Projects
+											</NavigationMenuLink>
+										</Link>
+									</NavigationMenuItem>
+								</NavigationMenuList>
+							</NavigationMenu>
 						</div>
 					</div>
 					<ThemeSwitcher />
