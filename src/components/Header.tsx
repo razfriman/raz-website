@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
-import { Link } from "@tanstack/react-router";
+import { cn } from "@/lib/utils";
+import { Link, useMatches } from "@tanstack/react-router";
 import { ThemeSwitcher } from "./theme-switcher";
 import {
 	NavigationMenu,
@@ -10,6 +11,9 @@ import {
 } from "./ui/navigation-menu";
 
 export default function Header() {
+	const matches = useMatches();
+	const currentPath = matches[matches.length - 1]?.pathname;
+
 	return (
 		<header className="border-b">
 			<Container>
@@ -24,7 +28,11 @@ export default function Header() {
 									<NavigationMenuItem>
 										<Link to="/">
 											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
+												className={cn(
+													navigationMenuTriggerStyle(),
+													currentPath === "/" &&
+														"bg-accent text-accent-foreground",
+												)}
 											>
 												Home
 											</NavigationMenuLink>
@@ -33,7 +41,11 @@ export default function Header() {
 									<NavigationMenuItem>
 										<Link to="/about">
 											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
+												className={cn(
+													navigationMenuTriggerStyle(),
+													currentPath === "/about" &&
+														"bg-accent text-accent-foreground",
+												)}
 											>
 												About
 											</NavigationMenuLink>
@@ -42,9 +54,26 @@ export default function Header() {
 									<NavigationMenuItem>
 										<Link to="/projects">
 											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
+												className={cn(
+													navigationMenuTriggerStyle(),
+													currentPath === "/projects" &&
+														"bg-accent text-accent-foreground",
+												)}
 											>
 												Projects
+											</NavigationMenuLink>
+										</Link>
+									</NavigationMenuItem>
+									<NavigationMenuItem>
+										<Link to="/contact">
+											<NavigationMenuLink
+												className={cn(
+													navigationMenuTriggerStyle(),
+													currentPath === "/contact" &&
+														"bg-accent text-accent-foreground",
+												)}
+											>
+												Contact
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuItem>

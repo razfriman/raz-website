@@ -1,0 +1,16 @@
+import type { SVGProps } from "react";
+const Fortnite = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		aria-label="Fortnite"
+		role="img"
+		width="1em"
+		height="1em"
+		viewBox="0 0 24 24"
+		fill="#6DB8FA"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	>
+		<path d="m15.767 14.171.097-5.05H12.4V5.197h3.99L16.872 0H7.128v24l5.271-.985V14.17z" />
+	</svg>
+);
+export default Fortnite;

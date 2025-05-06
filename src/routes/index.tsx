@@ -1,3 +1,7 @@
+import Canva from "@/components/icons/canva";
+import Fortnite from "@/components/icons/fortnite";
+import SpaceX from "@/components/icons/spacex";
+import Tesla from "@/components/icons/tesla";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -28,32 +32,51 @@ function Home() {
 						<li className="flex items-center gap-2">
 							<span className="text-primary">•</span>
 							<span>
-								Staff Software Engineer at <strong>Canva</strong>
+								Staff Software Engineer at{" "}
+								<strong className="inline-flex items-center gap-1">
+									Canva
+									<Canva className="inline-block" />
+								</strong>
 							</span>
 						</li>
 						<li className="flex items-center gap-2">
 							<span className="text-primary">•</span>
 							<span>
-								Senior Software Engineer at <strong>Canva</strong>
+								Senior Software Engineer at{" "}
+								<strong className="inline-flex items-center gap-1">
+									Canva
+									<Canva className="inline-block" />
+								</strong>
 							</span>
 						</li>
 						<li className="flex items-center gap-2">
 							<span className="text-primary">•</span>
 							<span>
-								Software Engineer II at <strong>SpaceX</strong>
+								Software Engineer II at{" "}
+								<strong className="inline-flex items-center gap-1">
+									SpaceX
+									<SpaceX className="inline-block" />
+								</strong>
 							</span>
 						</li>
 						<li className="flex items-center gap-2">
 							<span className="text-primary">•</span>
 							<span>
-								Software Engineer at <strong>In-Com Data Systems</strong>
+								Software Engineer at{" "}
+								<strong className="inline-flex items-center gap-1">
+									In-Com Data Systems
+								</strong>
 							</span>
 						</li>
 						<li className="flex items-center gap-2">
 							<span className="text-primary">•</span>
 							<div>
 								<span>
-									Creator of <strong>RazTracker</strong>
+									Creator of{" "}
+									<strong className="inline-flex items-center gap-1">
+										RazTracker
+										<Fortnite className="inline-block" />
+									</strong>
 								</span>
 								<br />
 								<small className="text-muted-foreground">
@@ -65,7 +88,11 @@ function Home() {
 							<span className="text-primary">•</span>
 							<div>
 								<span>
-									Creator of <strong>TeslaLib</strong>
+									Creator of{" "}
+									<strong className="inline-flex items-center gap-1">
+										TeslaLib
+										<Tesla className="inline-block" />
+									</strong>
 								</span>
 								<br />
 								<small className="text-muted-foreground">
