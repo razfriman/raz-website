@@ -1,3 +1,2 @@
-Sitemap: https://razfriman.com/sitemap.xml
 User-agent: *
 Disallow:
