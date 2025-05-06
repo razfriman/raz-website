@@ -1,10 +1,14 @@
 {
-    "editor.formatOnSave": true,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.codeActionsOnSave": [
-        "source.organizeImports",
-        "source.fixAll.format"
-    ]
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.format"
+  ],
+  "files.exclude": {
+    "dist": true,
+    "node_modules": true
+  }
 }
