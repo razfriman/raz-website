@@ -93,6 +93,20 @@ function Home() {
 								<li>Created the algorithm for Falcon-9 rocket booster serial number assignment and reusability management.</li>
 							</ul>
 						</Card>
+
+						<Card className="p-6">
+							<div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+								<div className="space-y-1">
+									<h3 className="text-xl font-bold">Software Engineer @ In-Com Data Systems</h3>
+									<p className="text-sm text-muted-foreground">JAN 2010 - MAY 2016 & DEC 2017 - NOV 2018</p>
+								</div>
+							</div>
+							<ul className="mt-4 space-y-2 text-muted-foreground list-disc list-inside">
+								<li>Designed and implemented a Language Parsing Framework used by Fortune-500 companies (JP-Morgan, Nissan, etc.) for COBOL, Java, C#, and Assembly.</li>
+								<li>Architected a Chatbot application platform with AI integrations including Google DialogFlow, Watson AI, and Microsoft Luis.</li>
+								<li>Developed integrations for Slack, Discord, and Facebook Messenger.</li>
+							</ul>
+						</Card>
 					</div>
 				</section>
 
