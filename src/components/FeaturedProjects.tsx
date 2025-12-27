@@ -14,9 +14,10 @@ export function FeaturedProjects() {
     <section className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="font-bold text-3xl tracking-tight">Featured Projects</h2>
-        <Button variant="link" asChild>
-          <Link to="/projects">View all projects &rarr;</Link>
-        </Button>
+        <Button
+          variant="link"
+          render={<Link to="/projects">View all projects &rarr;</Link>}
+        />
       </div>
       <div className="space-y-6">
         {featuredProjects.map((project) => {

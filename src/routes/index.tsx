@@ -29,15 +29,17 @@ function Home() {
             platform for the line dance world.
           </p>
           <div className="flex gap-4">
-            <Button asChild>
-              <a
-                href="/Resume_Raz_Friman.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Résumé
-              </a>
-            </Button>
+            <Button
+              render={
+                <a
+                  href="/Resume_Raz_Friman.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Résumé
+                </a>
+              }
+            />
             <Button
               variant="outline"
               render={
@@ -49,7 +51,7 @@ function Home() {
                   GitHub
                 </a>
               }
-            ></Button>
+            />
           </div>
         </div>
 
@@ -227,9 +229,7 @@ function Home() {
             I'm always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
-          <Button size="lg" asChild>
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
+          <Button size="lg" render={<Link to="/contact">Get in Touch</Link>} />
         </section>
       </div>
     </div>

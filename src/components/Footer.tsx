@@ -81,20 +81,20 @@ export default function Footer() {
           {links.map((link) => (
             <Button
               key={link.href}
-              asChild
               variant="ghost"
               size="icon"
               className="h-10 w-10"
-            >
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            </Button>
+              render={
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              }
+            />
           ))}
         </div>
         <p className="text-muted-foreground text-sm">

@@ -20,12 +20,16 @@ export default function Contact() {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col items-center space-y-6 pt-6">
-            <Button asChild size="lg" className="gap-2">
-              <a href="mailto:raz@friman.au">
-                <Mail className="h-5 w-5" />
-                raz@friman.au
-              </a>
-            </Button>
+            <Button
+              size="lg"
+              className="gap-2"
+              render={
+                <a href="mailto:raz@friman.au">
+                  <Mail className="h-5 w-5" />
+                  raz@friman.au
+                </a>
+              }
+            />
           </CardContent>
         </Card>
       </div>
