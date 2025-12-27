@@ -1,19 +1,51 @@
-import type { SVGProps } from "react";
-const SpaceX = (props: SVGProps<SVGSVGElement>) => (
-	<svg
-		aria-label="SpaceX"
-		role="img"
-		width="2em"
-		height="2em"
-		viewBox="0 0 24 24"
-		xmlns="http://www.w3.org/2000/svg"
-		className="bg-muted rounded-md p-1"
-		{...props}
-	>
-		<path
-			className="fill-foreground"
-			d="M24 7.417C8.882 8.287 1.89 14.75.321 16.28L0 16.583h2.797C10.356 9.005 21.222 7.663 24 7.417zm-17.046 6.35c-.472.321-.945.68-1.398 1.02l2.457 1.796h2.778zM2.948 10.8H.189l3.25 2.381c.473-.321 1.02-.661 1.512-.945Z"
-		/>
-	</svg>
+import * as React from "react";
+
+import type { IconType } from "./icon-type";
+
+type SpaceXProps = React.ComponentPropsWithoutRef<"svg"> & {
+  /**
+   * The title provides an accessible short text description to the SVG
+   */
+  title?: string;
+  /**
+   * Hex color or color name or "default" to use the default hex for each icon
+   */
+  color?: string;
+  /**
+   * The size of the Icon.
+   */
+  size?: string | number;
+};
+
+const defaultColor = "#5865F2";
+
+const SpaceX: IconType = React.forwardRef<SVGSVGElement, SpaceXProps>(
+  function SpaceX(
+    { title = "SpaceX", color = "currentColor", size = 24, ...others },
+    ref,
+  ) {
+    if (color === "default") {
+      color = defaultColor;
+    }
+
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        fill={color}
+        viewBox="0 0 24 24"
+        ref={ref}
+        {...others}
+      >
+        <title>{title}</title>
+        <path
+          className="fill-foreground"
+          d="M24 7.417C8.882 8.287 1.89 14.75.321 16.28L0 16.583h2.797C10.356 9.005 21.222 7.663 24 7.417zm-17.046 6.35c-.472.321-.945.68-1.398 1.02l2.457 1.796h2.778zM2.948 10.8H.189l3.25 2.381c.473-.321 1.02-.661 1.512-.945Z"
+        />
+      </svg>
+    );
+  },
 );
-export default SpaceX;
+
+export { SpaceX as default, defaultColor };

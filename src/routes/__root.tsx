@@ -1,21 +1,20 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { Container } from "@/components/ui/container";
-import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export const Route = createRootRoute({
-	component: () => (
-		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-			<Container className="min-h-screen flex flex-col">
-				<Header />
-				<main className="flex-1 py-8">
-					<Outlet />
-				</main>
-				<Footer />
-				<TanStackRouterDevtools />
-			</Container>
-		</ThemeProvider>
-	),
+  component: () => (
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1 py-8 md:py-12">
+          <Outlet />
+        </main>
+        <Footer />
+        <TanStackRouterDevtools />
+      </div>
+    </ThemeProvider>
+  ),
 });
