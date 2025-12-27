@@ -38,15 +38,18 @@ function Home() {
                 View Résumé
               </a>
             </Button>
-            <Button variant="outline" asChild>
-              <a
-                href="https://github.com/razfriman"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </Button>
+            <Button
+              variant="outline"
+              render={
+                <a
+                  href="https://github.com/razfriman"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              }
+            ></Button>
           </div>
         </div>
 
