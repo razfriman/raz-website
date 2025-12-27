@@ -50,7 +50,7 @@ const links = [
 		label: "GitHub",
 	},
 	{
-		href: "mailto:raz.friman@razfriman.com",
+		href: "mailto:raz@friman.au",
 		icon: (
 			<svg
 				aria-label="Email icon"
@@ -76,27 +76,32 @@ const links = [
 
 export default function Footer() {
 	return (
-		<footer className="border-t py-6">
+		<footer className="border-t py-12">
 			<Container>
-				<div className="flex justify-center gap-6">
-					{links.map((link) => (
-						<Button
-							key={link.href}
-							asChild
-							variant="ghost"
-							size="icon"
-							className="h-10 w-10"
-						>
-							<a
-								href={link.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={link.label}
+				<div className="flex flex-col items-center gap-6">
+					<div className="flex justify-center gap-6">
+						{links.map((link) => (
+							<Button
+								key={link.href}
+								asChild
+								variant="ghost"
+								size="icon"
+								className="h-10 w-10"
 							>
-								{link.icon}
-							</a>
-						</Button>
-					))}
+								<a
+									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={link.label}
+								>
+									{link.icon}
+								</a>
+							</Button>
+						))}
+					</div>
+					<p className="text-sm text-muted-foreground">
+						© {new Date().getFullYear()} Raz Friman. Built with React, Vite, and Shadcn UI.
+					</p>
 				</div>
 			</Container>
 		</footer>

@@ -1,152 +1,135 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
+import { cn } from "@/lib/utils";
 import { createFileRoute } from "@tanstack/react-router";
 
 type Project = {
 	title: string;
 	subTitle: string;
+	tags: string[];
 	description: string;
 	link?: string;
 };
 
 const projects: Project[] = [
 	{
+		title: "Bootstepper",
+		subTitle: "The World's Largest Modern Line Dance Database",
+		tags: ["TypeScript", "PostgreSQL", "React", "TanStack Start", "AI", "Spotify API", "Analytics", "Music Recognition"],
+		description:
+			"A high-performance, mobile-first platform that fixes everything wrong with traditional line dance websites. It's 'Spotify meets IMDb' for the line dance world, serving a massive library of 160,000+ dances, 22,000+ choreographers, and 650,000+ videos. Features an AI Step Sheet Editor that helps choreographers format work in seconds, a Live Sessions tool for event hosts to manage real-time requests and auto-generate timetables with ETAs, and Smart Playlists with seamless Spotify/YouTube integration. Built to be 100% free, fast, and community-driven.",
+		link: "https://bootstepper.com",
+	},
+	{
 		title: "RazTracker",
-		subTitle: "C#, .NET, Docker",
-		description: "Fortnite Stats Tracker",
+		subTitle: "Fortnite Analytics Platform",
+		tags: ["C#", "MongoDB", "Angular", "Reverse Engineering", "UE5"],
+		description:
+			"Fortnite Analytics application that processes gameplay recordings from Unreal Engine 5. Provides insights into match history and performance for 2,000+ users and 10M+ analyzed players.",
 		link: "https://raztracker.com",
 	},
 	{
-		title: "RazzleServer",
-		subTitle: "C#, .NET, Docker",
-		description:
-			"MapleStory server emulator for MapleStory v40b written in C#. This server emulates the original game and allows user to play the game locally or online with friends",
-		link: "https://github.com/razfriman/RazzleServer",
-	},
-	{
-		title: "LineDance",
-		subTitle: "C#, .NET, Angular 10, PostgreSQL, Entity Framework",
-		description:
-			"Online portal for finding, sharing, and learning line dances. Users can upload new dances that the whole community can benefit from. Uses Spotifys API to link each dance to the songs they go with.",
-	},
-	{
-		title: "ScavengerCity",
-		subTitle: "C#, .NET, Angular 10, PostgreSQL, Entity Framework",
-		description:
-			"Online scavenger hunts around major urban areas. Fun challenges and riddles, great for groups, results in self guided tours around the city.",
-	},
-	{
-		title: "ARWorld",
-		subTitle: "Swift, ARKit, C#, .NET",
-		description: `Created a multiplayer iOS application using ARKit that allows
-  users to collaboratively draw in 3D space using their phones`,
-	},
-	{
 		title: "TeslaLib",
-		subTitle: "C#, .NET",
-		description: `C# Library to access Tesla Motors' API to manage the car's settings. Recently updated to .NET Core/Standard`,
+		subTitle: "C# Wrapper for Tesla API",
+		tags: ["C#", ".NET Core", "API"],
+		description:
+			"A comprehensive C# library to access Tesla Motors' API to manage vehicle settings. Supports .NET Core and Standard.",
 		link: "https://github.com/razfriman/TeslaLib",
 	},
 	{
-		title: "MyRealEstate",
-		subTitle: "Swift, NodeJS, AngularJS",
-		description: `Application to help owners manage rental properties and track investments. Includes functionality
-  for tenants to communicate with their landlord and make payments. Implemented NodeJS backend API
-  as well as an iOS frontend`,
-	},
-	{
-		title: "Out&About",
-		subTitle: "Ionic, Cordova, iOS, Android, AngularJS",
-		description: `Cofounded startup to organize social event for groups. Implemented hybrid mobile application for
-  iOS and Android`,
-	},
-	{
-		title: "Snap2Ask",
-		subTitle: "Objective-C, PHP",
+		title: "RazzleServer",
+		subTitle: "MapleStory Server Emulator",
+		tags: ["C#", ".NET", "Docker", "Networking"],
 		description:
-			"Graphical question/answer service. Implemented iOS frontend and REST API backend",
-		link: "https://github.com/razfriman/Snap2Ask",
-	},
-	{
-		title: "MapleStoryHooks",
-		subTitle: "C#, C++, Assembly",
-		description: `Developed an application to decrypt TCP/IP packets for online game by reverse engineering
-  the game client's internal network functions and hooking them to intercept unencrypted data`,
-		link: "https://github.com/razfriman/MapleStoryHooks",
-	},
-	{
-		title: "MapleLib",
-		subTitle: "C#, .NET Core",
-		description: `C# Library to assist developers with all tasks related to MapleStory,
-  including file decryption, data editing, and network encryption/decryption`,
-		link: "https://github.com/razfriman/MapleLib",
-	},
-	{
-		title: "SnowSniffer",
-		subTitle: "Java, Winpcap",
-		description:
-			"Tool to sniff network packets specific to MapleStory. Helps developers capture, decode, and sort network traffic",
-		link: "https://github.com/razfriman/SnowMS",
+			"MapleStory server emulator for version v40b. Written in C#, it emulates the original game logic and network protocol, allowing for local or online play.",
+		link: "https://github.com/razfriman/RazzleServer",
 	},
 	{
 		title: "Cobol Parser",
-		subTitle: "C#, Antlr",
-		description: `Parsing framework that supports complete semantic parsing of all COBOL programs.
-   This parser supports many of the most popular COBOL dialiects, including Enterprise,
-   OS/VS, ILE, etc. The AST generated allows you to visit, crawl, filter, and transform
-   the AST in any way desirable. The following projects are child projects that use this
-   parser to demonstrate its applications.`,
+		subTitle: "Semantic COBOL Parsing Framework",
+		tags: ["C#", "Antlr", "Language Design"],
+		description:
+			"Complete semantic parsing framework supporting multiple COBOL dialects. Used by Fortune 500 companies like JP-Morgan and Nissan for code transformation and analysis.",
+	},
+	{
+		title: "ARWorld",
+		subTitle: "Multiplayer AR Drawing",
+		tags: ["Swift", "ARKit", "C#", ".NET"],
+		description:
+			"A collaborative multiplayer iOS application using ARKit that allows users to draw in 3D space together in real-time.",
+	},
+	{
+		title: "Snap2Ask",
+		subTitle: "Visual Q&A Service",
+		tags: ["Objective-C", "PHP", "REST API"],
+		description:
+			"A graphical question and answer service. Implemented the iOS frontend and a PHP REST API backend.",
+		link: "https://github.com/razfriman/Snap2Ask",
 	},
 	{
 		title: "Calculator for Glass",
-		subTitle: "Java",
-		description: `Application analyzes a user's voice as input in order to solve simple arithmetic equations.`,
+		subTitle: "Voice-Controlled Calculator",
+		tags: ["Java", "Google Glass", "Voice Recognition"],
+		description:
+			"Voice-activated calculator for Google Glass that analyzes voice input to solve arithmetic equations.",
 		link: "https://github.com/razfriman/GlassCalculator",
-	},
-	{
-		title: "Dalek Robot",
-		subTitle: "Java",
-		description: `Application written in Java that communicates with an Arduino controlled robot
-  over a Serial connection. The robot was built and programmed from the ground up to complete
-  an obstacle course with many tasks along the way. The movement of the robot is completely autonomous.
-  This is done by using sensors to detect where the robot is and what its currently doing.`,
-		link: "https://github.com/razfriman/DalekRobot",
 	},
 ];
 
 const Project = ({ project }: { project: Project }) => {
+	const isBootstepper = project.title === "Bootstepper";
+
 	return (
-		<Card className="p-6">
-			<div className="flex items-center justify-between">
-				<h3 className="text-xl font-bold">{project.title}</h3>
-				{project.link && (
-					<Button asChild variant="ghost" size="icon">
-						<a href={project.link} target="_blank" rel="noopener noreferrer">
-							<svg
-								aria-label="External link icon"
-								role="img"
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								className="h-4 w-4"
-							>
-								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-								<polyline points="15 3 21 3 21 9" />
-								<line x1="10" y1="14" x2="21" y2="3" />
-							</svg>
-						</a>
-					</Button>
-				)}
+		<Card className={cn("p-6 flex flex-col md:flex-row gap-6", isBootstepper && "border-primary/50 bg-primary/5")}>
+			<div className="flex-1 space-y-4">
+				<div className="flex items-center justify-between">
+					<div className="space-y-1">
+						<div className="flex items-center gap-2">
+							<h3 className="text-2xl font-bold">{project.title}</h3>
+						</div>
+						<p className="text-sm font-medium text-primary uppercase tracking-wide">
+							{project.subTitle}
+						</p>
+					</div>
+					{project.link && (
+						<Button asChild variant="outline" size="sm">
+							<a href={project.link} target="_blank" rel="noopener noreferrer" className="gap-2">
+								Visit Project
+								<svg
+									aria-label="External link icon"
+									role="img"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									className="h-4 w-4"
+								>
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+									<polyline points="15 3 21 3 21 9" />
+									<line x1="10" y1="14" x2="21" y2="3" />
+								</svg>
+							</a>
+						</Button>
+					)}
+				</div>
+				<p className="text-muted-foreground leading-relaxed">
+					{project.description}
+				</p>
+				<div className="flex flex-wrap gap-2">
+					{project.tags.map((tag) => (
+						<Badge key={tag} variant="secondary" className="text-[10px]">
+							{tag}
+						</Badge>
+					))}
+				</div>
 			</div>
-			<p className="text-sm text-muted-foreground mt-2">{project.subTitle}</p>
-			<p className="mt-4">{project.description}</p>
 		</Card>
 	);
 };
@@ -159,10 +142,14 @@ function Projects() {
 	return (
 		<Container>
 			<div className="space-y-8">
-				<div className="space-y-4">
-					<h1 className="text-4xl font-bold">Projects</h1>
+				<div className="space-y-4 text-center md:text-left">
+					<h1 className="text-4xl font-bold tracking-tight">Projects</h1>
+					<p className="text-muted-foreground max-w-2xl">
+						A collection of some of my favorite projects, ranging from large-scale
+						analytics platforms to experimental AR applications.
+					</p>
 				</div>
-				<div className="space-y-4">
+				<div className="space-y-6">
 					{projects.map((project) => (
 						<Project key={project.title} project={project} />
 					))}
