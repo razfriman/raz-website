@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { MonitorIcon, Moon, MoonIcon, Sun, SunIcon } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,13 +24,13 @@ export function ThemeSwitcher() {
       />
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          <SunIcon /> Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          <MoonIcon /> Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          <MonitorIcon /> System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

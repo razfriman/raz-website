@@ -4,7 +4,7 @@ import Fortnite from "@/components/icons/fortnite";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { projects } from "@/lib/projects";
+import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 export function FeaturedProjects() {

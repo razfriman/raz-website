@@ -2,19 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { type Project, projects } from "@/lib/projects";
-import { cn } from "@/lib/utils";
+import { type Project, projects } from "@/data/projects";
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const isBootstepper = project.title === "Bootstepper";
-
   return (
-    <Card
-      className={cn(
-        "flex flex-col gap-6 p-6 md:flex-row",
-        isBootstepper && "border-primary/50 bg-primary/5",
-      )}
-    >
+    <Card className="flex flex-col gap-6 p-6 md:flex-row">
       <div className="flex-1 space-y-4">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
