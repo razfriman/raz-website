@@ -115,14 +115,12 @@ function Home() {
         <FeaturedProjects />
 
         <section className="space-y-6 rounded-3xl bg-muted/50 p-8 py-12 text-center">
-          <h2 className="font-bold text-3xl">
-            Interested in working together?
-          </h2>
+          <h2 className="font-bold text-3xl">Let's Connect</h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground">
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision.
+            Have an interesting idea or just want to chat about tech, design, or
+            line dancing? Feel free to reach out.
           </p>
-          <Button size="lg" render={<Link to="/contact">Get in Touch</Link>} />
+          <Button size="lg" render={<Link to="/contact">Say Hello</Link>} />
         </section>
       </div>
     </div>

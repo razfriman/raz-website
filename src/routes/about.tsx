@@ -41,8 +41,8 @@ function About() {
                   I'm Raz Friman, a Staff Software Engineer currently based in
                   Sydney, Australia. My career has taken me from architecting
                   language parsers for Fortune 500 companies to building
-                  mission-critical systems for SpaceX, and now leading AI design
-                  generation at Canva.
+                  mission-critical systems for SpaceX, and now building
+                  AI-powered design generation products at Canva.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed md:text-lg">
                   I graduated with both an M.S. and B.S. in Computer Science
@@ -82,13 +82,6 @@ function About() {
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-bold text-xl">Photography & Travel</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed md:text-lg">
-                    You'll often find me traveling with my DJI Mavic Pro drone
-                    and GoPro, capturing the world from new perspectives.
-                  </p>
-                </div>
-                <div className="space-y-2">
                   <h3 className="font-bold text-xl">Outdoor Activities</h3>
                   <p className="text-base text-muted-foreground leading-relaxed md:text-lg">
                     I enjoy hiking, running, and Orienteering—a sport that
@@ -117,19 +110,47 @@ function About() {
                 <ul className="space-y-2.5 text-base text-muted-foreground md:text-lg">
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>TypeScript / JavaScript</span>
+                    <a
+                      href="https://www.typescriptlang.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      TypeScript
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>C# / .NET</span>
+                    <a
+                      href="https://dotnet.microsoft.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      C# / .NET
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Java</span>
+                    <a
+                      href="https://www.java.com/en/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Java
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Python</span>
+                    <a
+                      href="https://www.python.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Python
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -138,40 +159,149 @@ function About() {
                 <ul className="space-y-2.5 text-base text-muted-foreground md:text-lg">
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>AWS / Cloudflare / Vercel</span>
+                    <span>
+                      <a
+                        href="https://aws.amazon.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        AWS
+                      </a>
+                      {" / "}
+                      <a
+                        href="https://cloudflare.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        Cloudflare
+                      </a>
+                      {" / "}
+                      <a
+                        href="https://vercel.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        Vercel
+                      </a>
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Docker / Bazel</span>
+                    <span>
+                      <a
+                        href="https://www.docker.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        Docker
+                      </a>
+                      {" / "}
+                      <a
+                        href="https://bazel.build/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        Bazel
+                      </a>
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>PostgreSQL / MongoDB</span>
+                    <span>
+                      <a
+                        href="https://www.postgresql.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        PostgreSQL
+                      </a>
+                      {" / "}
+                      <a
+                        href="https://www.mongodb.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        MongoDB
+                      </a>
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>DynamoDB</span>
+                    <a
+                      href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      DynamoDB
+                    </a>
                   </li>
                 </ul>
               </div>
               <div className="space-y-4">
-                <h4 className="font-bold text-xl">AI & Search</h4>
+                <h4 className="font-bold text-xl">Observability</h4>
                 <ul className="space-y-2.5 text-base text-muted-foreground md:text-lg">
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Generative AI / LLMs</span>
+                    <a
+                      href="https://www.elastic.co/elasticsearch"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Elasticsearch
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>ElasticSearch</span>
+                    <a
+                      href="https://prometheus.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Prometheus
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Prometheus / Jaeger</span>
+                    <a
+                      href="https://www.jaegertracing.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Jaeger
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Protocol Buffers</span>
+                    <a
+                      href="https://grafana.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Grafana
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    <a
+                      href="https://protobuf.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Protocol Buffers
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -180,19 +310,58 @@ function About() {
                 <ul className="space-y-2.5 text-base text-muted-foreground md:text-lg">
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>React / Angular</span>
+                    <span>
+                      <a
+                        href="https://react.dev/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        React
+                      </a>
+                      {" / "}
+                      <a
+                        href="https://angular.dev/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        Angular
+                      </a>
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>TanStack Router/Start</span>
+                    <a
+                      href="https://tanstack.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      TanStack Router/Start
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Tailwind CSS</span>
+                    <a
+                      href="https://tailwindcss.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Tailwind CSS
+                    </a>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-primary">•</span>
-                    <span>Shadcn UI</span>
+                    <a
+                      href="https://ui.shadcn.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      Shadcn UI
+                    </a>
                   </li>
                 </ul>
               </div>
