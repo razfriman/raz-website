@@ -9,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 
-export default function Header() {
+export function Header() {
   const matches = useMatches();
   const currentPath = matches[matches.length - 1]?.pathname;
 

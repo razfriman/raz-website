@@ -73,7 +73,7 @@ const links = [
   },
 ];
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="border-t py-12">
       <div className="flex flex-col items-center gap-6">
