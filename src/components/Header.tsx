@@ -27,12 +27,12 @@ export default function Header() {
           <div className="flex min-w-0 items-center gap-2 sm:gap-6">
             <Link
               to="/"
-              className="shrink-0 font-bold text-lg tracking-tighter sm:text-xl"
+              className="shrink-0 font-bold text-lg text-primary tracking-tighter sm:text-xl"
             >
               Raz Friman
             </Link>
             <NavigationMenu className="hidden sm:flex">
-              <NavigationMenuList>
+              <NavigationMenuList className="gap-2">
                 {navItems.map((item) => (
                   <NavigationMenuItem key={item.to}>
                     <Link to={item.to}>
@@ -52,7 +52,7 @@ export default function Header() {
             </NavigationMenu>
           </div>
 
-          <div className="no-scrollbar flex items-center gap-1 overflow-x-auto sm:hidden sm:gap-4">
+          <div className="no-scrollbar flex items-center gap-2 overflow-x-auto sm:hidden sm:gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.to}

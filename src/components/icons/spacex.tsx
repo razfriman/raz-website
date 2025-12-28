@@ -17,7 +17,7 @@ type SpaceXProps = React.ComponentPropsWithoutRef<"svg"> & {
   size?: string | number;
 };
 
-const defaultColor = "#5865F2";
+const defaultColor = "#005288";
 
 const SpaceX: IconType = React.forwardRef<SVGSVGElement, SpaceXProps>(
   function SpaceX(

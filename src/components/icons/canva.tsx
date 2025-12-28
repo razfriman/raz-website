@@ -46,8 +46,8 @@ const Canva = (props: SVGProps<SVGSVGElement>) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(15.453 70.9057) rotate(-49.416) scale(61.8733)"
       >
-        <stop stopColor="#6420FF" />
-        <stop offset={1} stopColor="#6420FF" stopOpacity={0} />
+        <stop stopColor="#00C4CC" />
+        <stop offset={1} stopColor="#00C4CC" stopOpacity={0} />
       </radialGradient>
       <radialGradient
         id="paint1_radial_905_1790"
@@ -68,8 +68,8 @@ const Canva = (props: SVGProps<SVGSVGElement>) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(15.4526 70.9053) rotate(-45.1954) scale(61.1242 28.1118)"
       >
-        <stop stopColor="#6420FF" />
-        <stop offset={1} stopColor="#6420FF" stopOpacity={0} />
+        <stop stopColor="#00C4CC" />
+        <stop offset={1} stopColor="#00C4CC" stopOpacity={0} />
       </radialGradient>
       <radialGradient
         id="paint3_radial_905_1790"
