@@ -20,7 +20,7 @@ export default function Contact() {
           </div>
           <Button
             size="lg"
-            className="h-14 gap-3 px-8 text-lg"
+            className="h-14 gap-3 bg-cyan-500 px-8 text-lg text-white hover:bg-cyan-600"
             render={
               <a href="mailto:raz@friman.au">
                 <Mail className="h-6 w-6" />

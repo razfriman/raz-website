@@ -49,7 +49,7 @@ export const projects: Project[] = [
     tags: ["C#", "MongoDB", "Angular", "Reverse Engineering", "UE5"],
     description:
       "Fortnite Analytics application that processes gameplay recordings from Unreal Engine 5. Provides insights into match history and performance for 2,000+ users and 10M+ analyzed players.",
-    link: "https://raztracker.com",
+    link: "https://raztracker.friman.au/",
     iconBgColor: "bg-blue-500",
     hoverOverlayColor: "bg-blue-500/10",
     borderColor: "border-blue-500/20 dark:border-blue-500/40",
