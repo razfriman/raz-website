@@ -35,17 +35,16 @@ export function Header() {
               <NavigationMenuList className="gap-2">
                 {navItems.map((item) => (
                   <NavigationMenuItem key={item.to}>
-                    <Link to={item.to}>
-                      <NavigationMenuLink
-                        className={cn(
-                          navigationMenuTriggerStyle(),
-                          currentPath === item.to &&
-                            "bg-accent text-accent-foreground",
-                        )}
-                      >
-                        {item.label}
-                      </NavigationMenuLink>
-                    </Link>
+                    <NavigationMenuLink
+                      render={<Link to={item.to} />}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        currentPath === item.to &&
+                          "bg-accent text-accent-foreground",
+                      )}
+                    >
+                      {item.label}
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
