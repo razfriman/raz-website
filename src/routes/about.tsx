@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Briefcase, Code, Heart } from "lucide-react";
+
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 

@@ -11,9 +11,6 @@ const config = defineConfig(async () => {
   const isCloudflare = process.env.CLOUDFLARE !== undefined;
 
   return {
-    server: {
-      cors: true,
-    },
     plugins: [
       devtools(),
       ...(isCloudflare
@@ -35,6 +32,9 @@ const config = defineConfig(async () => {
         },
       }),
     ],
+    server: {
+      cors: true,
+    },
   };
 });
 

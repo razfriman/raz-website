@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type { IconType } from "./icon-type";
+import type  { IconType } from "./icon-type";
 
 type SpaceXProps = React.ComponentPropsWithoutRef<"svg"> & {
   /**
@@ -22,7 +22,7 @@ const defaultColor = "#005288";
 const SpaceX: IconType = React.forwardRef<SVGSVGElement, SpaceXProps>(
   function SpaceX(
     { title = "SpaceX", color = "currentColor", size = 24, ...others },
-    ref,
+    ref
   ) {
     if (color === "default") {
       color = defaultColor;
@@ -45,7 +45,7 @@ const SpaceX: IconType = React.forwardRef<SVGSVGElement, SpaceXProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 export { SpaceX as default, defaultColor };

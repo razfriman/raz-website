@@ -6,6 +6,7 @@ import {
   MessageCircleQuestion,
   RectangleEllipsis as RectangleGoggles,
 } from "lucide-react";
+
 import Bootstepper from "@/components/icons/bootstepper";
 import Fortnite from "@/components/icons/fortnite";
 import Tesla from "@/components/icons/tesla";
@@ -16,8 +17,8 @@ import { type Project, projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 const lucideIconMap: Record<string, LucideIcon> = {
-  HardDrive,
   Glasses,
+  HardDrive,
   MessageCircleQuestion,
   RectangleGoggles,
 };
@@ -32,13 +33,12 @@ function LucideIconComponent({
   return <Icon className={className} />;
 }
 
-const ProjectCard = ({ project }: { project: Project }) => {
-  return (
+const ProjectCard = ({ project }: { project: Project }) => (
     <Card
       className={cn(
         "group relative overflow-hidden border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
         project.borderColor || "border-border",
-        project.hoverOverlayColor || "bg-card",
+        project.hoverOverlayColor || "bg-card"
       )}
     >
       <div className="relative flex flex-col gap-6 p-6 md:flex-row">
@@ -50,7 +50,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <div
                   className={cn(
                     "flex items-center justify-center rounded-xl p-3 shadow-md transition-transform duration-300 group-hover:scale-110",
-                    project.iconBgColor,
+                    project.iconBgColor
                   )}
                 >
                   {project.icon === "bootstepper" && (
@@ -135,7 +135,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
     </Card>
   );
-};
 
 export const Route = createFileRoute("/projects")({
   component: Projects,

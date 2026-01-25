@@ -1,10 +1,11 @@
 import { Briefcase, HardDrive } from "lucide-react";
+
 import Canva from "@/components/icons/canva";
 import SpaceX from "@/components/icons/spacex";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-type Experience = {
+interface Experience {
   title: string;
   company: string;
   period: string;
@@ -14,75 +15,74 @@ type Experience = {
   borderColor: string;
   hoverOverlayColor: string;
   lucideIcon?: string;
-};
+}
 
 const experiences: Experience[] = [
   {
-    title: "Staff Software Engineer",
-    company: "Canva",
-    period: "MAR 2023 - PRESENT",
     achievements: [
       "Delivered high-impact AI design-generation capabilities across Image2Design, Website Design, and Guided Presentations.",
       "Productionized LocalDevProxy, a stable local development platform used by 70+ engineers to dramatically speed up backend iteration.",
       "Shipped novel techniques such as differential-diffusion background generation (CMDBG) and LLM-guided design creation.",
     ],
-    iconType: "canva",
-    iconBgColor: "bg-blue-500",
     borderColor: "border-blue-500/20 dark:border-blue-500/40",
+    company: "Canva",
     hoverOverlayColor: "bg-blue-500/10",
+    iconBgColor: "bg-blue-500",
+    iconType: "canva",
+    period: "MAR 2023 - PRESENT",
+    title: "Staff Software Engineer",
   },
   {
-    title: "Senior Software Engineer",
-    company: "Canva",
-    period: "NOV 2018 - MAR 2023",
     achievements: [
       "Designed and implemented a system to search and index the entire library of ~4,000,000 Canva templates in ~100 locales globally.",
       "Implemented a real-time system to count template publishes for creator compensation.",
       "Rewrote a local development tool and reduced runtime by 80%, saving ~20,000 hours of CI work per year.",
     ],
-    iconType: "canva",
-    iconBgColor: "bg-blue-500",
     borderColor: "border-blue-500/20 dark:border-blue-500/40",
+    company: "Canva",
     hoverOverlayColor: "bg-blue-500/10",
+    iconBgColor: "bg-blue-500",
+    iconType: "canva",
+    period: "NOV 2018 - MAR 2023",
+    title: "Senior Software Engineer",
   },
   {
-    title: "Software Engineer II",
-    company: "SpaceX",
-    period: "MAY 2016 - DEC 2017",
     achievements: [
       "Designed and implemented integrations for commands and telemetry into the mission-critical system for procedure running used by all launch engineers.",
       "Created the algorithm for Falcon-9 rocket booster serial number assignment and reusability management.",
       "Developed a FMECA (Failure Mode Effects and Criticality Analysis) tool for detecting single points of failures on the rocket.",
     ],
-    iconType: "spacex",
-    iconBgColor: "bg-[#A7A9AC]",
     borderColor: "border-[#005288]/20 dark:border-[#005288]/40",
+    company: "SpaceX",
     hoverOverlayColor: "bg-[#005288]/10",
+    iconBgColor: "bg-[#A7A9AC]",
+    iconType: "spacex",
+    period: "MAY 2016 - DEC 2017",
+    title: "Software Engineer II",
   },
   {
-    title: "Software Engineer",
-    company: "In-Com Data Systems",
-    period: "JAN 2010 - MAY 2016 & DEC 2017 - NOV 2018",
     achievements: [
       "Designed and implemented a Language Parsing Framework used by Fortune-500 companies (JP-Morgan, Nissan, etc.) for COBOL, Java, C#, and Assembly.",
       "Architected and implemented a Chatbot application platform with AI integrations including Google DialogFlow, Watson AI, and Microsoft Luis.",
       "Developed integrations for Slack, Discord, and Facebook Messenger.",
     ],
+    borderColor: "border-emerald-500/20 dark:border-emerald-500/40",
+    company: "In-Com Data Systems",
+    hoverOverlayColor: "bg-emerald-500/10",
+    iconBgColor: "bg-emerald-500",
     iconType: "lucide",
     lucideIcon: "HardDrive",
-    iconBgColor: "bg-emerald-500",
-    borderColor: "border-emerald-500/20 dark:border-emerald-500/40",
-    hoverOverlayColor: "bg-emerald-500/10",
+    period: "JAN 2010 - MAY 2016 & DEC 2017 - NOV 2018",
+    title: "Software Engineer",
   },
 ];
 
-const ExperienceCard = ({ experience }: { experience: Experience }) => {
-  return (
+const ExperienceCard = ({ experience }: { experience: Experience }) => (
     <Card
       className={cn(
         "group relative overflow-hidden border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
         experience.borderColor,
-        experience.hoverOverlayColor,
+        experience.hoverOverlayColor
       )}
     >
       <div className="relative flex flex-col gap-6 p-6">
@@ -91,7 +91,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
             <div
               className={cn(
                 "flex items-center justify-center rounded-xl p-3 shadow-md transition-transform duration-300 group-hover:scale-110",
-                experience.iconBgColor,
+                experience.iconBgColor
               )}
             >
               {experience.iconType === "canva" && <Canva className="h-6 w-6" />}
@@ -124,7 +124,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
                   "mt-2 h-1.5 w-1.5 shrink-0 rounded-full",
                   experience.iconType === "spacex"
                     ? "bg-[#005288]"
-                    : experience.iconBgColor,
+                    : experience.iconBgColor
                 )}
               />
               <p className="text-base text-gray-600 leading-relaxed dark:text-gray-300">
@@ -136,7 +136,6 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
       </div>
     </Card>
   );
-};
 
 export function Experience() {
   return (

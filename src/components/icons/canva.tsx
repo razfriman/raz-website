@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type  { SVGProps } from "react";
 
 const Canva = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -79,7 +79,7 @@ const Canva = (props: SVGProps<SVGSVGElement>) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(32.7158 10.7789) rotate(66.5198) scale(62.9836 105.512)"
       >
-        <stop stopColor="#00C4CC" stopOpacity={0.725916} />
+        <stop stopColor="#00C4CC" stopOpacity={0.725_916} />
         <stop offset={0.0001} stopColor="#00C4CC" />
         <stop offset={1} stopColor="#00C4CC" stopOpacity={0} />
       </radialGradient>

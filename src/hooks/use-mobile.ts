@@ -13,7 +13,7 @@ const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT - 1}px)`;
 export function useIsMobile() {
   // Lazy state initialization to avoid SSR hydration mismatches
   const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") {return false;}
     return window.matchMedia(MOBILE_QUERY).matches;
   });
 

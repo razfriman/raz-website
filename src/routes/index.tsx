@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
+
 import { Experience } from "@/components/experience";
 import { FeaturedProjects } from "@/components/featured-projects";
 import Bootstepper from "@/components/icons/bootstepper";

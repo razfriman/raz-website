@@ -6,6 +6,7 @@ import {
   MessageCircleQuestion,
   RectangleEllipsis as RectangleGoggles,
 } from "lucide-react";
+
 import Bootstepper from "@/components/icons/bootstepper";
 import Fortnite from "@/components/icons/fortnite";
 import Tesla from "@/components/icons/tesla";
@@ -16,8 +17,8 @@ import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 const lucideIconMap: Record<string, LucideIcon> = {
-  HardDrive,
   Glasses,
+  HardDrive,
   MessageCircleQuestion,
   RectangleGoggles,
 };
@@ -47,14 +48,13 @@ export function FeaturedProjects() {
         />
       </div>
       <div className="space-y-6">
-        {featuredProjects.map((project) => {
-          return (
+        {featuredProjects.map((project) => (
             <Card
               key={project.title}
               className={cn(
                 "group relative overflow-hidden border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
                 project.borderColor || "border-border",
-                project.hoverOverlayColor || "bg-card",
+                project.hoverOverlayColor || "bg-card"
               )}
             >
               <div className="relative space-y-4 p-6">
@@ -66,7 +66,7 @@ export function FeaturedProjects() {
                         <div
                           className={cn(
                             "flex items-center justify-center rounded-xl p-3 shadow-md transition-transform duration-300 group-hover:scale-110",
-                            project.iconBgColor,
+                            project.iconBgColor
                           )}
                         >
                           {project.icon === "bootstepper" && (
@@ -143,7 +143,7 @@ export function FeaturedProjects() {
                             "text-lg",
                             project.iconBgColor
                               ? project.iconBgColor.replace("bg-", "text-")
-                              : "text-primary",
+                              : "text-primary"
                           )}
                         >
                           ✓
@@ -155,8 +155,7 @@ export function FeaturedProjects() {
                 )}
               </div>
             </Card>
-          );
-        })}
+          ))}
       </div>
     </section>
   );

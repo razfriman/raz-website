@@ -1,5 +1,7 @@
 import { Link, useMatches } from "@tanstack/react-router";
+
 import { cn } from "@/lib/utils";
+
 import { ThemeSwitcher } from "./theme-switcher";
 import {
   NavigationMenu,
@@ -11,13 +13,13 @@ import {
 
 export function Header() {
   const matches = useMatches();
-  const currentPath = matches[matches.length - 1]?.pathname;
+  const currentPath = matches.at(-1)?.pathname;
 
   const navItems = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/projects", label: "Projects" },
-    { to: "/contact", label: "Contact" },
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Projects", to: "/projects" },
+    { label: "Contact", to: "/contact" },
   ];
 
   return (
@@ -40,7 +42,7 @@ export function Header() {
                       className={cn(
                         navigationMenuTriggerStyle(),
                         currentPath === item.to &&
-                          "bg-accent text-accent-foreground",
+                          "bg-accent text-accent-foreground"
                       )}
                     >
                       {item.label}
@@ -60,7 +62,7 @@ export function Header() {
                   "rounded-md px-2 py-1 font-medium text-xs transition-colors",
                   currentPath === item.to
                     ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground",
+                    : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
                 )}
               >
                 {item.label}

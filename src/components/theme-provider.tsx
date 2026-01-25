@@ -9,20 +9,20 @@ import {
 
 type Theme = "dark" | "light" | "system";
 
-type ThemeProviderProps = {
+interface ThemeProviderProps {
   children: React.ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
-};
+}
 
-type ThemeProviderState = {
+interface ThemeProviderState {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-};
+}
 
 const initialState: ThemeProviderState = {
-  theme: "system",
   setTheme: () => null,
+  theme: "system",
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
@@ -43,7 +43,7 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   // Lazy state initialization (rule 5.10)
   const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === "undefined") return defaultTheme;
+    if (typeof window === "undefined") {return defaultTheme;}
     return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
   });
 
@@ -71,16 +71,16 @@ export function ThemeProvider({
       localStorage.setItem(storageKey, newTheme);
       setThemeState(newTheme);
     },
-    [storageKey],
+    [storageKey]
   );
 
   // Memoized value object to prevent child re-renders (rule 5.5)
   const value = useMemo(
     () => ({
-      theme,
       setTheme,
+      theme,
     }),
-    [theme, setTheme],
+    [theme, setTheme]
   );
 
   return (
@@ -94,7 +94,7 @@ export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 
   if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider");
+    {throw new Error("useTheme must be used within a ThemeProvider");}
 
   return context;
 };
