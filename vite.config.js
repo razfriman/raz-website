@@ -18,7 +18,16 @@ const config = defineConfig(async () => {
         : [nitro()]),
       tsConfigPaths(),
       tailwindcss(),
-      tanstackStart(),
+      tanstackStart({
+        prerender: {
+        enabled: true,
+        crawlLinks: true,
+      },
+      sitemap: {
+        enabled: true,
+        host: 'https://razfriman.com',
+      }
+      }),
       viteReact({
         babel: {
           plugins: [
