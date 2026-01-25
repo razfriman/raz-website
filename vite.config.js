@@ -22,6 +22,7 @@ const config = defineConfig(() => {
         prerender: {
           crawlLinks: true,
           enabled: true,
+          filter: (url) => !url.path.endsWith(".pdf"),
         },
         sitemap: {
           enabled: true,
