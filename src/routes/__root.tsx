@@ -139,7 +139,9 @@ export const Route = createRootRoute({
       },
     ],
   }),
-
+  notFoundComponent: () => <div>Not Found</div>,
+  pendingComponent: () => <div>Loading...</div>,
+  errorComponent: () => <div>Error</div>,
   shellComponent: RootDocument,
 });
 
