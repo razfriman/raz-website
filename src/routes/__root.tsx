@@ -1,8 +1,18 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { lazy, Suspense } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+
+// Lazy load devtools (rule 2.3 - Defer Non-Critical Third-Party Libraries)
+// Devtools don't block user interaction, load after initial render
+const TanStackRouterDevtools = import.meta.env.PROD
+  ? () => null
+  : lazy(() =>
+      import("@tanstack/react-router-devtools").then((mod) => ({
+        default: mod.TanStackRouterDevtools,
+      })),
+    );
 
 export const Route = createRootRoute({
   component: () => (
@@ -13,7 +23,9 @@ export const Route = createRootRoute({
           <Outlet />
         </main>
         <Footer />
-        <TanStackRouterDevtools />
+        <Suspense fallback={null}>
+          <TanStackRouterDevtools />
+        </Suspense>
       </div>
     </ThemeProvider>
   ),

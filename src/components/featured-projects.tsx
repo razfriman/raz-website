@@ -32,9 +32,11 @@ function LucideIconComponent({
   return <Icon className={className} />;
 }
 
-export function FeaturedProjects() {
-  const featuredProjects = projects.filter((p) => p.featured);
+// Hoist static computation to module level (rule 6.3 / 7.4)
+// Filter runs once at module load, not on every render
+const featuredProjects = projects.filter((p) => p.featured);
 
+export function FeaturedProjects() {
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
