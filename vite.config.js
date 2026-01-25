@@ -7,7 +7,7 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
-const config = defineConfig(async () => {
+const config = defineConfig(() => {
   const isCloudflare = process.env.CLOUDFLARE !== undefined;
 
   return {
@@ -20,13 +20,13 @@ const config = defineConfig(async () => {
       tailwindcss(),
       tanstackStart({
         prerender: {
-        enabled: true,
-        crawlLinks: true,
-      },
-      sitemap: {
-        enabled: true,
-        host: 'https://razfriman.com',
-      }
+          crawlLinks: true,
+          enabled: true,
+        },
+        sitemap: {
+          enabled: true,
+          host: "https://razfriman.com",
+        },
       }),
       viteReact({
         babel: {

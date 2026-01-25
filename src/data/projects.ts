@@ -6,11 +6,16 @@ export interface Project {
   link?: string;
   featured?: boolean;
   features?: string[];
-  iconBgColor?: string; // Background color for icon container
-  hoverOverlayColor?: string; // Hover overlay color
-  borderColor?: string; // Border color
-  icon?: "bootstepper" | "fortnite" | "tesla" | "lucide"; // Icon identifier
-  lucideIcon?: string; // Lucide icon name (e.g., "RectangleGoggles", "HardDrive")
+  /** Background color for icon container */
+  iconBgColor?: string;
+  /** Hover overlay color */
+  hoverOverlayColor?: string;
+  /** Border color */
+  borderColor?: string;
+  /** Icon identifier */
+  icon?: "bootstepper" | "fortnite" | "tesla" | "lucide";
+  /** Lucide icon name (e.g., "RectangleGoggles", "HardDrive") */
+  lucideIcon?: string;
 }
 
 export const projects: Project[] = [

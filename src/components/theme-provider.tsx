@@ -35,15 +35,17 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
  * - Rule 5.9: Stable callback via useCallback
  * - Rule 5.5: Memoized context value object
  */
-export function ThemeProvider({
+export const ThemeProvider = ({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
   ...props
-}: ThemeProviderProps) {
+}: ThemeProviderProps) => {
   // Lazy state initialization (rule 5.10)
   const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === "undefined") {return defaultTheme;}
+    if (typeof window === "undefined") {
+      return defaultTheme;
+    }
     return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
   });
 
@@ -88,13 +90,14 @@ export function ThemeProvider({
       {children}
     </ThemeProviderContext.Provider>
   );
-}
+};
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 
-  if (context === undefined)
-    {throw new Error("useTheme must be used within a ThemeProvider");}
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
 
   return context;
 };

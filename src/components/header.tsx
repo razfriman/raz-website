@@ -11,7 +11,7 @@ import {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 
-export function Header() {
+export const Header = () => {
   const matches = useMatches();
   const currentPath = matches.at(-1)?.pathname;
 
@@ -77,4 +77,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};

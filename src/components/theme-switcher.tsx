@@ -3,6 +3,7 @@ import {
   Moon as MoonIcon,
   Sun as SunIcon,
 } from "lucide-react";
+import { useCallback } from "react";
 
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
@@ -13,8 +14,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function ThemeSwitcher() {
+export const ThemeSwitcher = () => {
   const { setTheme } = useTheme();
+
+  const handleLightClick = useCallback(() => {
+    setTheme("light");
+  }, [setTheme]);
+
+  const handleDarkClick = useCallback(() => {
+    setTheme("dark");
+  }, [setTheme]);
+
+  const handleSystemClick = useCallback(() => {
+    setTheme("system");
+  }, [setTheme]);
 
   return (
     <DropdownMenu>
@@ -28,16 +41,16 @@ export function ThemeSwitcher() {
         }
       />
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={handleLightClick}>
           <SunIcon /> Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={handleDarkClick}>
           <MoonIcon /> Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={handleSystemClick}>
           <MonitorIcon /> System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};

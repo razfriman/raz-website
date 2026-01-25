@@ -9,33 +9,31 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-function Contact() {
-  return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <Card className={cn("border-primary/20 p-8 dark:border-primary/40")}>
-        <div className="flex flex-col items-center space-y-6">
-          <div className="flex items-center justify-center rounded-xl bg-primary p-4 shadow-md">
-            <MessageCircle className="h-8 w-8 text-primary-foreground" />
-          </div>
-          <div className="space-y-2 text-center">
-            <h2 className="font-bold text-2xl">Let's Chat</h2>
-            <p className="text-muted-foreground">
-              Have a question, want to collaborate on something fun, or just
-              want to say hi? Drop me a line.
-            </p>
-          </div>
-          <Button
-            size="lg"
-            className="h-14 gap-3 px-8 text-lg"
-            render={
-              <a href="mailto:raz@friman.au">
-                <Mail className="h-6 w-6" />
-                raz@friman.au
-              </a>
-            }
-          />
+const Contact = () => (
+  <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <Card className={cn("border-primary/20 p-8 dark:border-primary/40")}>
+      <div className="flex flex-col items-center space-y-6">
+        <div className="flex items-center justify-center rounded-xl bg-primary p-4 shadow-md">
+          <MessageCircle className="h-8 w-8 text-primary-foreground" />
         </div>
-      </Card>
-    </div>
-  );
-}
+        <div className="space-y-2 text-center">
+          <h2 className="font-bold text-2xl">Let&apos;s Chat</h2>
+          <p className="text-muted-foreground">
+            Have a question, want to collaborate on something fun, or just want
+            to say hi? Drop me a line.
+          </p>
+        </div>
+        <Button
+          size="lg"
+          className="h-14 gap-3 px-8 text-lg"
+          render={
+            <a href="mailto:raz@friman.au">
+              <Mail className="h-6 w-6" />
+              raz@friman.au
+            </a>
+          }
+        />
+      </div>
+    </Card>
+  </div>
+);

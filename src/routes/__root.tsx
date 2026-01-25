@@ -91,33 +91,31 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
 });
 
-function RootDocument({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1 py-8 md:py-12">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
-        <TanStackDevtools
-          config={{
-            position: "bottom-right",
-          }}
-          plugins={[
-            {
-              name: "Tanstack Router",
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
-        <Scripts />
-      </body>
-    </html>
-  );
-}
+const RootDocument = ({ children }: { children: React.ReactNode }) => (
+  <html lang="en">
+    <head>
+      <HeadContent />
+    </head>
+    <body>
+      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1 py-8 md:py-12">{children}</main>
+          <Footer />
+        </div>
+      </ThemeProvider>
+      <TanStackDevtools
+        config={{
+          position: "bottom-right",
+        }}
+        plugins={[
+          {
+            name: "Tanstack Router",
+            render: <TanStackRouterDevtoolsPanel />,
+          },
+        ]}
+      />
+      <Scripts />
+    </body>
+  </html>
+);

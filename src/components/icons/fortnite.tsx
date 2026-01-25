@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type  { IconType } from "./icon-type";
+import  { type IconType } from "./icon-type";
 
 type FortniteProps = React.ComponentPropsWithoutRef<"svg"> & {
   /**
@@ -24,16 +24,14 @@ const Fortnite: IconType = React.forwardRef<SVGSVGElement, FortniteProps>(
     { title = "Fortnite", color = "currentColor", size = 24, ...others },
     ref
   ) {
-    if (color === "default") {
-      color = defaultColor;
-    }
+    const fillColor = color === "default" ? defaultColor : color;
 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
-        fill={color}
+        fill={fillColor}
         viewBox="0 0 24 24"
         ref={ref}
         {...others}

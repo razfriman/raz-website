@@ -10,10 +10,12 @@ const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT - 1}px)`;
  * Per React Best Practices rule 5.8 (Subscribe to Derived State):
  * Only re-renders when the boolean result changes, not on every pixel change.
  */
-export function useIsMobile() {
+export const useIsMobile = () => {
   // Lazy state initialization to avoid SSR hydration mismatches
   const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === "undefined") {return false;}
+    if (typeof window === "undefined") {
+      return false;
+    }
     return window.matchMedia(MOBILE_QUERY).matches;
   });
 
@@ -30,4 +32,4 @@ export function useIsMobile() {
   }, []);
 
   return isMobile;
-}
+};

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type  { IconType } from "./icon-type";
+import  { type IconType } from "./icon-type";
 
 type BootstepperIconProps = React.ComponentPropsWithoutRef<"svg"> & {
   /**
@@ -26,16 +26,14 @@ const BootstepperIcon: IconType = React.forwardRef<
   { title = "BootStepper", color = "currentColor", size = 24, ...others },
   ref
 ) {
-  if (color === "default") {
-    color = defaultColor;
-  }
+  const fillColor = color === "default" ? defaultColor : color;
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      fill={color}
+      fill={fillColor}
       viewBox="0 0 400 400"
       ref={ref}
       {...others}

@@ -78,77 +78,75 @@ const experiences: Experience[] = [
 ];
 
 const ExperienceCard = ({ experience }: { experience: Experience }) => (
-    <Card
-      className={cn(
-        "group relative overflow-hidden border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
-        experience.borderColor,
-        experience.hoverOverlayColor
-      )}
-    >
-      <div className="relative flex flex-col gap-6 p-6">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div
-              className={cn(
-                "flex items-center justify-center rounded-xl p-3 shadow-md transition-transform duration-300 group-hover:scale-110",
-                experience.iconBgColor
+  <Card
+    className={cn(
+      "group relative overflow-hidden border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+      experience.borderColor,
+      experience.hoverOverlayColor
+    )}
+  >
+    <div className="relative flex flex-col gap-6 p-6">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div
+            className={cn(
+              "flex items-center justify-center rounded-xl p-3 shadow-md transition-transform duration-300 group-hover:scale-110",
+              experience.iconBgColor
+            )}
+          >
+            {experience.iconType === "canva" && <Canva className="h-6 w-6" />}
+            {experience.iconType === "spacex" && (
+              <SpaceX className="h-6 w-6" color="#005288" />
+            )}
+            {experience.iconType === "briefcase" && (
+              <Briefcase className="h-6 w-6 text-white" />
+            )}
+            {experience.iconType === "lucide" &&
+              experience.lucideIcon === "HardDrive" && (
+                <HardDrive className="h-6 w-6 text-white" />
               )}
-            >
-              {experience.iconType === "canva" && <Canva className="h-6 w-6" />}
-              {experience.iconType === "spacex" && (
-                <SpaceX className="h-6 w-6" color="#005288" />
-              )}
-              {experience.iconType === "briefcase" && (
-                <Briefcase className="h-6 w-6 text-white" />
-              )}
-              {experience.iconType === "lucide" &&
-                experience.lucideIcon === "HardDrive" && (
-                  <HardDrive className="h-6 w-6 text-white" />
-                )}
-            </div>
-            <div className="space-y-1">
-              <h3 className="font-bold text-2xl text-gray-900 dark:text-white">
-                {experience.title} @ {experience.company}
-              </h3>
-              <div className="font-medium text-gray-600 text-sm dark:text-gray-400">
-                {experience.period}
-              </div>
+          </div>
+          <div className="space-y-1">
+            <h3 className="font-bold text-2xl text-gray-900 dark:text-white">
+              {experience.title} @ {experience.company}
+            </h3>
+            <div className="font-medium text-gray-600 text-sm dark:text-gray-400">
+              {experience.period}
             </div>
           </div>
         </div>
-        <div className="space-y-4">
-          {experience.achievements.map((achievement, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div
-                className={cn(
-                  "mt-2 h-1.5 w-1.5 shrink-0 rounded-full",
-                  experience.iconType === "spacex"
-                    ? "bg-[#005288]"
-                    : experience.iconBgColor
-                )}
-              />
-              <p className="text-base text-gray-600 leading-relaxed dark:text-gray-300">
-                {achievement}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </Card>
-  );
-
-export function Experience() {
-  return (
-    <section className="space-y-6">
-      <h2 className="font-bold text-3xl tracking-tight">Experience</h2>
-      <div className="grid gap-6">
-        {experiences.map((experience, index) => (
-          <ExperienceCard
-            key={`${experience.company}-${index}`}
-            experience={experience}
-          />
+      <div className="space-y-4">
+        {experience.achievements.map((achievement) => (
+          <div key={achievement} className="flex items-start gap-3">
+            <div
+              className={cn(
+                "mt-2 h-1.5 w-1.5 shrink-0 rounded-full",
+                experience.iconType === "spacex"
+                  ? "bg-[#005288]"
+                  : experience.iconBgColor
+              )}
+            />
+            <p className="text-base text-gray-600 leading-relaxed dark:text-gray-300">
+              {achievement}
+            </p>
+          </div>
         ))}
       </div>
-    </section>
-  );
-}
+    </div>
+  </Card>
+);
+
+export const Experience = () => (
+  <section className="space-y-6">
+    <h2 className="font-bold text-3xl tracking-tight">Experience</h2>
+    <div className="grid gap-6">
+      {experiences.map((experience, index) => (
+        <ExperienceCard
+          key={`${experience.company}-${index}`}
+          experience={experience}
+        />
+      ))}
+    </div>
+  </section>
+);
