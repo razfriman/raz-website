@@ -85,37 +85,91 @@ export const Route = createRootRoute({
       {
         title: "Raz Friman",
       },
+      // Open Graph
+      {
+        content: "Raz Friman",
+        property: "og:title",
+      },
+      {
+        content:
+          "Raz Friman - Staff Software Engineer at Canva building high-impact AI-driven design generation products. Passionate about LLMs, generative design, and high-performance systems. Creator of Bootstepper, the world's largest line dance database.",
+        property: "og:description",
+      },
+      {
+        content: "website",
+        property: "og:type",
+      },
+      {
+        content: "https://razfriman.com",
+        property: "og:url",
+      },
+      {
+        content: "/og.png",
+        property: "og:image",
+      },
+      {
+        content: "1200",
+        property: "og:image:width",
+      },
+      {
+        content: "630",
+        property: "og:image:height",
+      },
+      // Twitter Card
+      {
+        content: "summary_large_image",
+        name: "twitter:card",
+      },
+      {
+        content: "Raz Friman",
+        name: "twitter:title",
+      },
+      {
+        content:
+          "Raz Friman - Staff Software Engineer at Canva building high-impact AI-driven design generation products. Passionate about LLMs, generative design, and high-performance systems. Creator of Bootstepper, the world's largest line dance database.",
+        name: "twitter:description",
+      },
+      {
+        content: "/og.png",
+        name: "twitter:image",
+      },
+      {
+        content: "https://razfriman.com",
+        name: "twitter:url",
+      },
     ],
   }),
 
   shellComponent: RootDocument,
 });
 
-const RootDocument = ({ children }: { children: React.ReactNode }) => (
-  <html lang="en">
-    <head>
-      <HeadContent />
-    </head>
-    <body>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1 py-8 md:py-12">{children}</main>
-          <Footer />
-        </div>
-      </ThemeProvider>
-      <TanStackDevtools
-        config={{
-          position: "bottom-right",
-        }}
-        plugins={[
-          {
-            name: "Tanstack Router",
-            render: <TanStackRouterDevtoolsPanel />,
-          },
-        ]}
-      />
-      <Scripts />
-    </body>
-  </html>
-);
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1 py-8 md:py-12">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+        <TanStackDevtools
+          config={{
+            position: "bottom-right",
+          }}
+          plugins={[
+            {
+              name: "Tanstack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
+        />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
