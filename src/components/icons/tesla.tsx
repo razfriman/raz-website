@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import  { type IconType } from "./icon-type";
+import { type IconType } from "./icon-type";
 
 type TeslaProps = React.ComponentPropsWithoutRef<"svg"> & {
   /**
