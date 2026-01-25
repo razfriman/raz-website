@@ -138,23 +138,25 @@ export const Route = createFileRoute("/projects")({
   component: Projects,
 });
 
-const Projects = () => (
-  <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-    <div className="space-y-12">
-      <div className="space-y-4">
-        <h1 className="font-extrabold text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Projects
-        </h1>
-        <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
-          A collection of some of my favorite projects, ranging from large-scale
-          analytics platforms to experimental AR applications.
-        </p>
-      </div>
-      <div className="space-y-6">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
+function Projects() {
+  return (
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="space-y-12">
+        <div className="space-y-4">
+          <h1 className="font-extrabold text-4xl tracking-tight sm:text-5xl md:text-6xl">
+            Projects
+          </h1>
+          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
+            A collection of some of my favorite projects, ranging from
+            large-scale analytics platforms to experimental AR applications.
+          </p>
+        </div>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
