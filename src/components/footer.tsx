@@ -73,34 +73,32 @@ const links = [
   },
 ];
 
-export function Footer() {
-  return (
-    <footer className="border-t py-12">
-      <div className="flex flex-col items-center gap-6">
-        <div className="flex justify-center gap-6">
-          {links.map((link) => (
-            <Button
-              key={link.href}
-              variant="ghost"
-              size="icon"
-              className="h-10 w-10"
-              render={
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                >
-                  {link.icon}
-                </a>
-              }
-            />
-          ))}
-        </div>
-        <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Raz Friman
-        </p>
+export const Footer = () => (
+  <footer className="border-t py-12">
+    <div className="flex flex-col items-center gap-6">
+      <div className="flex justify-center gap-6">
+        {links.map((link) => (
+          <Button
+            key={link.href}
+            variant="ghost"
+            size="icon"
+            className="h-10 w-10"
+            render={
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            }
+          />
+        ))}
       </div>
-    </footer>
-  );
-}
+      <p className="text-muted-foreground text-sm">
+        © {new Date().getFullYear()} Raz Friman
+      </p>
+    </div>
+  </footer>
+);
