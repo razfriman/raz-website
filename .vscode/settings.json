@@ -10,14 +10,13 @@
     "**/node_modules": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "emmet.showExpandedAbbreviation": "never",
   "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit",
     "source.fixAll.biome": "explicit",
-    "source.organizeImports.biome": "explicit",
-    "source.fixAll.oxc": "explicit"
+    "source.organizeImports.biome": "explicit"
   },
   "[typescript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
@@ -75,5 +74,6 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
-  }
+  },
+  "editor.formatOnSaveMode": "file"
 }
