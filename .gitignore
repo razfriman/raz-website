@@ -12,7 +12,6 @@ dist
 .output
 dev-dist
 .zed
-.vscode
 apps/cli/public/
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,node,nextjs,vercel,turbo,storybookjs,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,node,nextjs,vercel,turbo,storybookjs,react
